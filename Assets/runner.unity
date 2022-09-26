@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 77468511}
   - component: {fileID: 77468510}
   m_Layer: 0
-  m_Name: Gracz
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,7 +254,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77468509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.05, y: 0, z: 0}
+  m_LocalPosition: {x: -0.01, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 2136212536}
   - component: {fileID: 2136212535}
   - component: {fileID: 2136212534}
+  - component: {fileID: 2136212537}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -345,6 +346,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2136212537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136212533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f563f190a1459334dba752b9d472b5e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 77468514}
 --- !u!1001 &81348311425038367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -352,13 +366,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 81348310913756699, guid: 2f8d61f294137ef4982e83f5c5f87a57, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 8193338149309623678, guid: 2f8d61f294137ef4982e83f5c5f87a57, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8193338149309623678, guid: 2f8d61f294137ef4982e83f5c5f87a57, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.11
+      value: -0.73
       objectReference: {fileID: 0}
     - target: {fileID: 8193338149309623678, guid: 2f8d61f294137ef4982e83f5c5f87a57, type: 3}
       propertyPath: m_LocalPosition.y
@@ -366,7 +384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8193338149309623678, guid: 2f8d61f294137ef4982e83f5c5f87a57, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.020851288
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8193338149309623678, guid: 2f8d61f294137ef4982e83f5c5f87a57, type: 3}
       propertyPath: m_LocalRotation.w

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GenerowaniePlatform : MonoBehaviour
 {
     public GameObject Platforma;
-    public float odstep = 10; 
+    public float odstep = 0; 
 
     private void Start() 
     {
