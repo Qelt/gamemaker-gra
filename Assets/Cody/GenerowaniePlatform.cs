@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class GenerowaniePlatform : MonoBehaviour
 {
-    public GameObject platforma;
+    public GameObject Platforma;
     public float odstep = 10; 
-    private int i;
 
     private void Start() 
     {
@@ -18,7 +17,7 @@ public class GenerowaniePlatform : MonoBehaviour
 
     public void UtworzPlatforme()
     {
-        Instantiate(platforma, new Vector3(odstep, Random.Range(-2.5f, 2.5f), 0), Quaternion.Euler(0, 0, 0)) ;
+        Instantiate(Platforma, new Vector3(odstep, Random.Range(-2.5f, 2.5f), 0), Quaternion.Euler(0, 0, 0)) ;
         odstep += 10;
     }
 }
