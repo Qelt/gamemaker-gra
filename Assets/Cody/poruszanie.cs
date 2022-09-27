@@ -27,5 +27,11 @@ public class poruszanie : MonoBehaviour
             rb.AddForce(Vector2.up * WysokoscSkoku);
         }
 
+        if (transform.position.y > 5)
+        {
+            transform.position = new Vector3(transform.position.x , 5 , transform.position.z);
+        }
+
+        
     }
 }

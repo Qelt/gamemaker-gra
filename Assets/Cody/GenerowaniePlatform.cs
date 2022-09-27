@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class GenerowaniePlatform : MonoBehaviour
 {
+    public static GenerowaniePlatform Instance;
+
     public GameObject Platforma;
     public float odstep = 0; 
+
+    void Awake()
+    {
+        if(Instance != null)
+        {
+            Destroy(this);
+            
+        } else Instance = this;
+        Debug.Log(Instance);
+    }
 
     private void Start() 
     {
