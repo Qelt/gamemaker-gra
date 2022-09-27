@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4b8c1cec713574ea71f25ff34769f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WysokoscSkoku: 200
+  WysokoscSkoku: 400
   PrednkoscPoruszania: 200
 --- !u!50 &77468511
 Rigidbody2D:
