@@ -32,6 +32,11 @@ public class poruszanie : MonoBehaviour
             transform.position = new Vector3(transform.position.x , 5 , transform.position.z);
         }
 
+        if (transform.position.x > 8.5)
+        {
+            transform.position = new Vector3(8.5 , transform.position.y , transform.position.z);
+        }
+
         
     }
 }
