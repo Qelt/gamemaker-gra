@@ -10,13 +10,10 @@ public class poruszaniev2 : MonoBehaviour
     public float jumpVelocity = 20;
     public float groundHeight = 10;
     public bool isGrounded = false;
-
     public bool isHoldingJump = false;
     public float maxHoldJumpTime = 0.4f;
     public float holdJUmpTimer = 0.0f;
-
     public float jummpGroundThreshould = 1;
-
     
     void Start()
     {
@@ -63,7 +60,6 @@ public class poruszaniev2 : MonoBehaviour
          pos.y += velocity.y * Time.fixedDeltaTime;
          if (!isHoldingJump)
          {
-
             velocity.y += gravity * Time.fixedDeltaTime;
          }
 
