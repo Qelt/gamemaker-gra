@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class poruszaniev2 : MonoBehaviour
 {
-   
-    
-    
-        
-    
-    
+
     public float gravity;
     public Vector2 velocity;
     public float jumpVelocity = 20;
@@ -29,44 +24,27 @@ public class poruszaniev2 : MonoBehaviour
 
     }
 
-
-
-
     void Update()
     {  
-
-
         Vector2 pos = transform.position;
         float groundDistance = Mathf.Abs(pos.y - groundHeight);
         if (isGrounded || groundDistance <= jummpGroundThreshould) 
         { 
           if (Input.GetKeyDown(KeyCode.Space))
             { 
-
                  isGrounded = false;
                  velocity.y = jumpVelocity;
                  isHoldingJump = true;
                  holdJUmpTimer = 0;
             }
-
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
           isHoldingJump = false;
-
-
         }
-
-
     }
     
-
-
-
-
-
-
     private void FixedUpdate()
     {
        Vector2 pos = transform.position;
@@ -79,16 +57,9 @@ public class poruszaniev2 : MonoBehaviour
                 if (holdJUmpTimer >= maxHoldJumpTime)
                 {
                     isHoldingJump = false;
-
-
                 }
-
-
-
-
             }
          
-
          pos.y += velocity.y * Time.fixedDeltaTime;
          if (!isHoldingJump)
          {
@@ -96,30 +67,14 @@ public class poruszaniev2 : MonoBehaviour
             velocity.y += gravity * Time.fixedDeltaTime;
          }
 
-
-         
-         
-
          if (pos.y <= groundHeight)
          {
             pos.y = groundHeight;
             isGrounded = true;
-            
          }
-
-
         }
-
        transform.position = pos;
-
-
     }
-
-
-
-
-
-    
 }
     
     
