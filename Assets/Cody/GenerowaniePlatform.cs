@@ -30,6 +30,6 @@ public class GenerowaniePlatform : MonoBehaviour
     public void UtworzPlatforme()
     {
         Instantiate(Platforma, new Vector3(odstep, Random.Range(-2.5f, 2.5f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 10;
+        odstep += 12;
     }
 }

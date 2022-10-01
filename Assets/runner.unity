@@ -261,12 +261,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1792909918
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -352,8 +352,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   GroundCheckCollider: {fileID: 1009336738}
-  WysokoscSkoku: 0
-  PrednkoscPoruszania: 0
+  WysokoscSkoku: 500
+  PrednkoscPoruszania: 0.008
   isHoldingJump: 0
 --- !u!1 &2136212533
 GameObject:
