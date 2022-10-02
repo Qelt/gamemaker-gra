@@ -354,6 +354,7 @@ MonoBehaviour:
   GroundCheckCollider: {fileID: 1009336738}
   WysokoscSkoku: 500
   PrednkoscPoruszania: 0.008
+  HowManyJumps: 2
   isHoldingJump: 0
 --- !u!1 &2136212533
 GameObject:

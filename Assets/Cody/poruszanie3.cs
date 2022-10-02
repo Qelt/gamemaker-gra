@@ -13,6 +13,7 @@ public class poruszanie3 : MonoBehaviour
     
     public int WysokoscSkoku = 5;
     public float PrednkoscPoruszania;
+    public int HowManyJumps;
     
     public bool isHoldingJump;
     
@@ -36,26 +37,32 @@ public class poruszanie3 : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("skok");
             Jump();
         }
     }
 
     void GroundCheck()
     {
-        isGrounded = false;
+        //isGrounded = false;
         //Debug.Log("ground");
         Collider2D[] colliders = Physics2D.OverlapCircleAll(GroundCheckCollider.position, GroundCheckRadius, groundLayer);
         if(colliders.Length > 0)
         {
             Debug.Log("ground");
             isGrounded = true;
+            HowManyJumps = 2;
         }    
     }
     
     void Jump()
     {
-        rb.AddForce(Vector2.up * WysokoscSkoku);
+        if (HowManyJumps > 0)
+        {
+            rb.AddForce(Vector2.up * WysokoscSkoku);
+            HowManyJumps = HowManyJumps - 1;
+            Debug.Log("skok");
+        }
+        
     }
 
     void Move()
