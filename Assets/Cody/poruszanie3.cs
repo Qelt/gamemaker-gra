@@ -14,7 +14,7 @@ public class poruszanie3 : MonoBehaviour
     public int WysokoscSkoku = 5;
     public float PrednkoscPoruszania;
     
-    public bool isHoldingJump = false;
+    public bool isHoldingJump;
     
     
 
@@ -31,8 +31,8 @@ public class poruszanie3 : MonoBehaviour
     {
         GroundCheck();
         Move();
-        Vector2 vtmp = new Vector2(Input.GetAxis("Horizontal"),0);
-        rb.AddForce(vtmp * Time.deltaTime * PrednkoscPoruszania);      
+        //Vector2 vtmp = new Vector2(Input.GetAxis("Horizontal"),0);
+        //rb.AddForce(vtmp * Time.deltaTime * PrednkoscPoruszania);      
         
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -46,8 +46,9 @@ public class poruszanie3 : MonoBehaviour
         isGrounded = false;
         //Debug.Log("ground");
         Collider2D[] colliders = Physics2D.OverlapCircleAll(GroundCheckCollider.position, GroundCheckRadius, groundLayer);
-        if(colliders.Length>0)
+        if(colliders.Length > 0)
         {
+            Debug.Log("ground");
             isGrounded = true;
         }    
     }
@@ -59,7 +60,7 @@ public class poruszanie3 : MonoBehaviour
 
     void Move()
     {
-        Debug.Log("ruch");
+        //Debug.Log("ruch");
         transform.position += new Vector3(PrednkoscPoruszania ,0f ,0f);
         //GetComponent<Rigidbody2D>().AddForce(New Vector2(3 ,0));
     }
