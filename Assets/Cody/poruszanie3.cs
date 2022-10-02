@@ -5,9 +5,10 @@ using UnityEngine;
 public class poruszanie3 : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private BoxCollider2D coll;
     
     [SerializeField] public bool isGrounded = false;
-    const float GroundCheckRadius = 0.5f;
+    const float GroundCheckRadius = 0.1f;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform GroundCheckCollider;
     
@@ -24,12 +25,13 @@ public class poruszanie3 : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+        coll = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         GroundCheck();
         Move();
         //Vector2 vtmp = new Vector2(Input.GetAxis("Horizontal"),0);
@@ -43,7 +45,7 @@ public class poruszanie3 : MonoBehaviour
 
     void GroundCheck()
     {
-        //isGrounded = false;
+        isGrounded = false;
         //Debug.Log("ground");
         Collider2D[] colliders = Physics2D.OverlapCircleAll(GroundCheckCollider.position, GroundCheckRadius, groundLayer);
         if(colliders.Length > 0)
@@ -71,4 +73,7 @@ public class poruszanie3 : MonoBehaviour
         transform.position += new Vector3(PrednkoscPoruszania ,0f ,0f);
         //GetComponent<Rigidbody2D>().AddForce(New Vector2(3 ,0));
     }
+
+    
+    
 }
