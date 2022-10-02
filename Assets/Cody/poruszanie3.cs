@@ -12,8 +12,8 @@ public class poruszanie3 : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform GroundCheckCollider;
     
-    public int WysokoscSkoku = 5;
-    public float PrednkoscPoruszania;
+    public int WysokoscSkoku = 500;
+    public float PrednkoscPoruszania = 0.008f;
     public int HowManyJumps;
     
     public bool isHoldingJump;
