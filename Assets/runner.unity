@@ -128,6 +128,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8697907151560769172, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
   m_PrefabInstance: {fileID: 1870283544}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1537842549 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8697907153263935883, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
+  m_PrefabInstance: {fileID: 1870283544}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1715067466
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,11 +188,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: HowManyJumps
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: WysokoscSkoku
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
+      propertyPath: GroundCheckCollider
+      value: 
+      objectReference: {fileID: 1537842549}
+    - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
+      propertyPath: PrednkoscPoruszania
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: 8697907151560769172, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: m_RootOrder
