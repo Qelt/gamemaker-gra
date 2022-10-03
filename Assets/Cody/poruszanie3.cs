@@ -8,7 +8,7 @@ public class poruszanie3 : MonoBehaviour
     private BoxCollider2D coll;
     
     [SerializeField] public bool isGrounded = false;
-    const float GroundCheckRadius = 0.1f;
+    const float GroundCheckRadius = 0.05f;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform GroundCheckCollider;
     
@@ -52,7 +52,7 @@ public class poruszanie3 : MonoBehaviour
         {
             Debug.Log("ground");
             isGrounded = true;
-            HowManyJumps = 2;
+            HowManyJumps = 1;
         }    
     }
     
