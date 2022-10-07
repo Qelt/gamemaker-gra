@@ -7,7 +7,7 @@ public class GenerowaniePlatform : MonoBehaviour
     public static GenerowaniePlatform Instance;
 
     public GameObject Platforma;
-    public float odstep = 0; 
+    public float odstep = 20; 
 
     void Awake()
     {
@@ -29,7 +29,7 @@ public class GenerowaniePlatform : MonoBehaviour
 
     public void UtworzPlatforme()
     {
-        Instantiate(Platforma, new Vector3(odstep, Random.Range(-2.5f, 2.5f), 0), Quaternion.Euler(0, 0, 0)) ;
+        Instantiate(Platforma, new Vector3(odstep, Random.Range(-4f, 2f), 0), Quaternion.Euler(0, 0, 0)) ;
         odstep += 12;
     }
 }

@@ -12,7 +12,11 @@ public class poruszanie3 : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform GroundCheckCollider;
     
-    public int WysokoscSkoku = 500;
+    public float WysokoscSkoku = 500;
+
+    public float fallMultiplier = 2.5f;
+    public float lowJumpMultiplier = 2f;
+    
     public float PrednkoscPoruszania = 0.007f;
     public int HowManyJumps;
     
@@ -21,25 +25,34 @@ public class poruszanie3 : MonoBehaviour
     
 
 
-    // Start is called before the first frame update
-    void Start()
+    
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
         GroundCheck();
-        Move();
-        //Vector2 vtmp = new Vector2(Input.GetAxis("Horizontal"),0);
-        //rb.AddForce(vtmp * Time.deltaTime * PrednkoscPoruszania);      
+        Move();      
         
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
+        }
+
+        if(Input.GetKey(KeyCode.D))
+        {
+            Debug.Log("D");
+            transform.position += new Vector3(0.008f ,0f ,0f);
+        } if (Input.GetKeyDown(KeyCode.A))
+        {
+            PrednkoscPoruszania = PrednkoscPoruszania - 0.001f;
+        }else
+        {
+            PrednkoscPoruszania = 0.007f;
         }
     }
 
@@ -50,7 +63,7 @@ public class poruszanie3 : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(GroundCheckCollider.position, GroundCheckRadius, groundLayer);
         if(colliders.Length > 0)
         {
-            Debug.Log("ground");
+            //Debug.Log("ground");
             isGrounded = true;
             HowManyJumps = 1;
         }    
@@ -60,9 +73,19 @@ public class poruszanie3 : MonoBehaviour
     {
         if (HowManyJumps > 0)
         {
-            rb.AddForce(Vector2.up * WysokoscSkoku);
+            GetComponent<Rigidbody2D>().velocity = Vector2.up * WysokoscSkoku;
             HowManyJumps = HowManyJumps - 1;
-            Debug.Log("skok");
+           
+           /*
+            if (rb.velocity.y < 0)
+            {
+                Debug.Log("skok");
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime; 
+            } else if (rb.velocity.y > 0 && !Input.GetButton ("Jump"))
+            {
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            }
+            */
         }
         
     }
