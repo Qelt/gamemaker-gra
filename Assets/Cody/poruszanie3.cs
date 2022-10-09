@@ -12,19 +12,21 @@ public class poruszanie3 : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform GroundCheckCollider;
     
-    public float WysokoscSkoku = 500;
-
-    public float fallMultiplier = 2.5f;
-    public float lowJumpMultiplier = 2f;
+    [SerializeField]public float WysokoscSkoku = 500;
     
+    /*
+    [SerializeField]public float fallMultiplier = 2.5f;
+    [SerializeField]public float lowJumpMultiplier = 2f;
+    [SerializeField]float jumpTime;
+    Vector2 vecGravity;
+    */
+    bool isJumping;
+    float jumpCounter;
+
+
     public float PrednkoscPoruszania = 0.007f;
     public int HowManyJumps;
     
-    public bool isHoldingJump;
-    
-    
-
-
     
     void Awake()
     {
@@ -46,10 +48,13 @@ public class poruszanie3 : MonoBehaviour
         if(Input.GetKey(KeyCode.D))
         {
             Debug.Log("D");
-            transform.position += new Vector3(0.008f ,0f ,0f);
-        } if (Input.GetKeyDown(KeyCode.A))
+            PrednkoscPoruszania = 0.0075f;
+            PrednkoscPoruszania = PrednkoscPoruszania + 0.0005f;
+            //transform.position += new Vector3(0.0075f ,0f ,0f);
+
+        } if (Input.GetKey(KeyCode.A))
         {
-            PrednkoscPoruszania = PrednkoscPoruszania - 0.001f;
+            PrednkoscPoruszania = PrednkoscPoruszania - 0.0005f;
         }else
         {
             PrednkoscPoruszania = 0.007f;
@@ -75,9 +80,32 @@ public class poruszanie3 : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity = Vector2.up * WysokoscSkoku;
             HowManyJumps = HowManyJumps - 1;
-           
-           /*
+            
+            /*
+            rb.velocity = new Vector2(rb.velocity.x, WysokoscSkoku);
+            isJumping = true;
+            jumpCounter = 0;
+
+            if (rb.velocity.y > 0 && isJumping) 
+            {
+                jumpCounter+= Time.deltaTime;
+                if (jumpCounter > jumpTime) isJumping = false;
+
+                rb.velocity += vecGravity * lowJumpMultiplier * Time.deltaTime;
+            }
+
+            if (Input.GetButtonUp("Jump"))
+            {
+                isJumping = false;
+            }
+
             if (rb.velocity.y < 0)
+            {
+                rb.velocity -= vecGravity * fallMultiplier * Time.deltaTime;
+            }
+            */
+           
+            /*if (rb.velocity.y < 0)
             {
                 Debug.Log("skok");
                 rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime; 
