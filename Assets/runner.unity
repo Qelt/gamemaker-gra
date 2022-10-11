@@ -231,7 +231,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.4302181}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400.9, y: 299.10004}
+  m_AnchoredPosition: {x: 400.9, y: 269}
   m_SizeDelta: {x: 5.062, y: -38.2987}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &650183968
@@ -492,8 +492,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
+      propertyPath: fastspeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
+      propertyPath: slowspeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: HowManyJumps
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
+      propertyPath: defaultspeed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: WysokoscSkoku

@@ -24,8 +24,12 @@ public class poruszanie3 : MonoBehaviour
     float jumpCounter;
 
 
-    public float PrednkoscPoruszania = 0.007f;
+    private float PrednkoscPoruszania;
     public int HowManyJumps;
+
+    public float defaultspeed;
+    public float fastspeed;
+    public float slowspeed;
     
     
     void Awake()
@@ -45,19 +49,18 @@ public class poruszanie3 : MonoBehaviour
             Jump();
         }
 
-        if(Input.GetKey(KeyCode.D))
+        if(Input.GetKeyDown(KeyCode.D))
         {
-            Debug.Log("D");
-            PrednkoscPoruszania = 0.0075f;
-            PrednkoscPoruszania = PrednkoscPoruszania + 0.0005f;
+            Debug.Log(PrednkoscPoruszania);
+            PrednkoscPoruszania = PrednkoscPoruszania + fastspeed;
             //transform.position += new Vector3(0.0075f ,0f ,0f);
 
-        } if (Input.GetKey(KeyCode.A))
+        } else if (Input.GetKeyDown(KeyCode.A))
         {
-            PrednkoscPoruszania = PrednkoscPoruszania - 0.0005f;
+            PrednkoscPoruszania = PrednkoscPoruszania - slowspeed;
         }else
         {
-            PrednkoscPoruszania = 0.007f;
+            PrednkoscPoruszania = defaultspeed;
         }
     }
 
@@ -121,7 +124,7 @@ public class poruszanie3 : MonoBehaviour
     void Move()
     {
         //Debug.Log("ruch");
-        transform.position += new Vector3(PrednkoscPoruszania ,0f ,0f);
+        transform.position += new Vector3(PrednkoscPoruszania, 0f ,0f) * Time.deltaTime;
         //GetComponent<Rigidbody2D>().AddForce(New Vector2(3 ,0));
     }
 
