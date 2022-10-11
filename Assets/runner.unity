@@ -493,11 +493,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: fastspeed
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: slowspeed
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: HowManyJumps
@@ -508,8 +508,12 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
+      propertyPath: vecGravity.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: WysokoscSkoku
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: isHoldingJump
@@ -517,7 +521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: fallMultiplier
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: lowJumpMultiplier
@@ -541,11 +545,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8697907151560769172, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.67
+      value: 3.11
       objectReference: {fileID: 0}
     - target: {fileID: 8697907151560769172, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.99
+      value: 4.51
       objectReference: {fileID: 0}
     - target: {fileID: 8697907151560769172, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: m_LocalPosition.z

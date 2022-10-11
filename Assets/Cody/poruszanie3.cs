@@ -7,19 +7,19 @@ public class poruszanie3 : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D coll;
     
-    [SerializeField] public bool isGrounded = false;
+    public bool isGrounded = false;
     const float GroundCheckRadius = 0.05f;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform GroundCheckCollider;
     
-    [SerializeField]public float WysokoscSkoku = 500;
+    [SerializeField] float WysokoscSkoku = 500;
     
-    /*
-    [SerializeField]public float fallMultiplier = 2.5f;
-    [SerializeField]public float lowJumpMultiplier = 2f;
+    
+    [SerializeField] float fallMultiplier = 2.5f;
+    [SerializeField] float lowJumpMultiplier = 2f;
     [SerializeField]float jumpTime;
-    Vector2 vecGravity;
-    */
+    [SerializeField] Vector2 vecGravity;
+    
     bool isJumping;
     float jumpCounter;
 
@@ -38,30 +38,39 @@ public class poruszanie3 : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
     }
 
-    
+    private void FixedUpdate() 
+    {
+         
+    }
+
     void Update()
     {
         GroundCheck();
-        Move();      
+        Move();     
         
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
 
-        if(Input.GetKeyDown(KeyCode.D))
+        if(Input.GetKey(KeyCode.D))
         {
             Debug.Log(PrednkoscPoruszania);
-            PrednkoscPoruszania = PrednkoscPoruszania + fastspeed;
+            PrednkoscPoruszania = fastspeed;
             //transform.position += new Vector3(0.0075f ,0f ,0f);
 
-        } else if (Input.GetKeyDown(KeyCode.A))
+        } else if (Input.GetKey(KeyCode.A))
         {
-            PrednkoscPoruszania = PrednkoscPoruszania - slowspeed;
+            PrednkoscPoruszania = slowspeed;
         }else
         {
             PrednkoscPoruszania = defaultspeed;
         }
+
+         if (rb.velocity.y < 0)
+            {
+                rb.velocity -= vecGravity * fallMultiplier * Time.deltaTime;
+            }
     }
 
     void GroundCheck()
@@ -81,10 +90,10 @@ public class poruszanie3 : MonoBehaviour
     {
         if (HowManyJumps > 0)
         {
-            GetComponent<Rigidbody2D>().velocity = Vector2.up * WysokoscSkoku;
+           // GetComponent<Rigidbody2D>().velocity = Vector2.up * WysokoscSkoku;
             HowManyJumps = HowManyJumps - 1;
             
-            /*
+            
             rb.velocity = new Vector2(rb.velocity.x, WysokoscSkoku);
             isJumping = true;
             jumpCounter = 0;
@@ -94,7 +103,7 @@ public class poruszanie3 : MonoBehaviour
                 jumpCounter+= Time.deltaTime;
                 if (jumpCounter > jumpTime) isJumping = false;
 
-                rb.velocity += vecGravity * lowJumpMultiplier * Time.deltaTime;
+                rb.velocity += Vector2.up * lowJumpMultiplier * Time.deltaTime;
             }
 
             if (Input.GetButtonUp("Jump"))
@@ -102,11 +111,8 @@ public class poruszanie3 : MonoBehaviour
                 isJumping = false;
             }
 
-            if (rb.velocity.y < 0)
-            {
-                rb.velocity -= vecGravity * fallMultiplier * Time.deltaTime;
-            }
-            */
+           
+            
            
             /*if (rb.velocity.y < 0)
             {
@@ -125,7 +131,7 @@ public class poruszanie3 : MonoBehaviour
     {
         //Debug.Log("ruch");
         transform.position += new Vector3(PrednkoscPoruszania, 0f ,0f) * Time.deltaTime;
-        //GetComponent<Rigidbody2D>().AddForce(New Vector2(3 ,0));
+        //rb.MovePosition(rb.position +  Vector2.right * PrednkoscPoruszania);
     }
 
     
