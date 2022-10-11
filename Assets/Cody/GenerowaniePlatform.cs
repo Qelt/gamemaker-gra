@@ -29,7 +29,7 @@ public class GenerowaniePlatform : MonoBehaviour
 
     public void UtworzPlatforme()
     {
-        Instantiate(Platforma, new Vector3(odstep, Random.Range(-6f, -1.5f), 0), Quaternion.Euler(0, 0, 0)) ;
+        Instantiate(Platforma, new Vector3(odstep, Random.Range(-6f, -2f), 0), Quaternion.Euler(0, 0, 0)) ;
         odstep += 12;
     }
 }

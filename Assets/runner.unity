@@ -493,11 +493,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: fastspeed
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: slowspeed
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: HowManyJumps
@@ -505,7 +505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: defaultspeed
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: vecGravity.y
