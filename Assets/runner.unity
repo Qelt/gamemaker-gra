@@ -423,6 +423,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Platforma: {fileID: 8003804680199834700, guid: 38e140005f64bbf439a73fc3833eefcc, type: 3}
+  Platforma1: {fileID: 8003804680199834700, guid: 38e140005f64bbf439a73fc3833eefcc, type: 3}
+  Platforma2: {fileID: 1067605343497912742, guid: b84c60251995f494aa2305805b4336d6, type: 3}
+  Platforma3: {fileID: 8421514894577926367, guid: 553f0fb120ed78f418b062922d0e1143, type: 3}
   odstep: 20
 --- !u!4 &1715067468
 Transform:
