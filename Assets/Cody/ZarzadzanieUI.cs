@@ -6,6 +6,7 @@ using TMPro;
 public class ZarzadzanieUI : MonoBehaviour
 {
     public TextMeshProUGUI punktyWGrzeTekst;
+    public TextMeshProUGUI punktyEkranKonca;
     float punkty; 
     
     
@@ -25,5 +26,6 @@ public class ZarzadzanieUI : MonoBehaviour
     {
         punkty++;
         punktyWGrzeTekst.text = punkty.ToString();
+        punktyEkranKonca.text = punkty.ToString();
     }
 }

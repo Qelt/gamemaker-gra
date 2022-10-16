@@ -32,11 +32,19 @@ public class poruszanie3 : MonoBehaviour
     //wykrywanie przeszkody
     public GameObject obstacleRayObject;
     [SerializeField] float rayDistance;
+    public bool kolizja;
     
+    //inne
+    public bool pozaMapa;
+
+
+
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
+        Time.timeScale = 1f;
     }
 
     private void FixedUpdate() 
@@ -73,6 +81,12 @@ public class poruszanie3 : MonoBehaviour
             {
                 rb.velocity -= vecGravity * fallMultiplier * Time.deltaTime;
             }
+
+        if (transform.position.y < -5)
+        {
+            pozaMapa = true;
+            Time.timeScale = 0f;
+        }
     }
 
     void GroundCheck()
@@ -136,9 +150,10 @@ public class poruszanie3 : MonoBehaviour
         //rb.MovePosition(rb.position +  Vector2.right * PrednkoscPoruszania);
     }
 
-    
     void wykrywaniePrzeszkody()
     {
+        
+        /*
         RaycastHit2D hitObstacle = Physics2D.Raycast(obstacleRayObject.transform.position, Vector2.right, rayDistance);
 
         if (hitObstacle != null)
@@ -150,5 +165,7 @@ public class poruszanie3 : MonoBehaviour
             Debug.Log("brak przeszkody");
             Debug.DrawRay(obstacleRayObject.transform.position, Vector2.right * hitObstacle.distance, Color.green );
         }
+        */
     }
+
 }
