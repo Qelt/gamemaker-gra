@@ -8,7 +8,7 @@ public class PoruszanieKamery : MonoBehaviour
     
     private void Update()
     {
-        transform.position = new Vector3(player.position.x, 0f, -10f);
+        transform.position = new Vector3(player.position.x + 2, 0f, -10f);
     }
     
     

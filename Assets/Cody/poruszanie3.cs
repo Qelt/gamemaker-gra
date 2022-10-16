@@ -7,30 +7,31 @@ public class poruszanie3 : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D coll;
     
+    //grand chack
     public bool isGrounded = false;
     const float GroundCheckRadius = 0.05f;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform GroundCheckCollider;
     
+    //skok
     [SerializeField] float WysokoscSkoku = 500;
-    
-    
     [SerializeField] float fallMultiplier = 2.5f;
     [SerializeField] float lowJumpMultiplier = 2f;
     [SerializeField]float jumpTime;
     [SerializeField] Vector2 vecGravity;
     
+    //poruszanie sie i ograniczenie skoku
     bool isJumping;
     float jumpCounter;
-
-
     private float PrednkoscPoruszania;
     public int HowManyJumps;
-
     public float defaultspeed;
     public float fastspeed;
     public float slowspeed;
     
+    //wykrywanie przeszkody
+    public GameObject obstacleRayObject;
+    [SerializeField] float rayDistance;
     
     void Awake()
     {
@@ -47,7 +48,8 @@ public class poruszanie3 : MonoBehaviour
     {
         GroundCheck();
         Move();     
-        
+        wykrywaniePrzeszkody();
+
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
@@ -135,5 +137,18 @@ public class poruszanie3 : MonoBehaviour
     }
 
     
-    
+    void wykrywaniePrzeszkody()
+    {
+        RaycastHit2D hitObstacle = Physics2D.Raycast(obstacleRayObject.transform.position, Vector2.right, rayDistance);
+
+        if (hitObstacle != null)
+        {
+            Debug.Log("przeszkoda");
+            Debug.DrawRay(obstacleRayObject.transform.position, Vector2.right * hitObstacle.distance, Color.red );
+        }else
+        {
+            Debug.Log("brak przeszkody");
+            Debug.DrawRay(obstacleRayObject.transform.position, Vector2.right * hitObstacle.distance, Color.green );
+        }
+    }
 }
