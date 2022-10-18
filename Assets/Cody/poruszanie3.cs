@@ -175,4 +175,14 @@ public class poruszanie3 : MonoBehaviour
         
     }
 
+    /*
+    void przyspieszanieGry()
+    {
+        defaultspeed += ;
+        fastspeed += ;
+        slowspeed += ;
+    }
+    */
+
+
 }
