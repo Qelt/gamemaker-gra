@@ -55,7 +55,12 @@ public class poruszanie3 : MonoBehaviour
     void Update()
     {
         GroundCheck();
-        Move();     
+        
+        if (kolizja == false)
+        {
+            Move();
+        }
+            
         wykrywaniePrzeszkody();
 
         if(Input.GetKeyDown(KeyCode.Space))
@@ -153,19 +158,21 @@ public class poruszanie3 : MonoBehaviour
     void wykrywaniePrzeszkody()
     {
         
-        /*
+        
         RaycastHit2D hitObstacle = Physics2D.Raycast(obstacleRayObject.transform.position, Vector2.right, rayDistance);
 
-        if (hitObstacle != null)
+        if (hitObstacle.collider != null)
         {
-            Debug.Log("przeszkoda");
+            Debug.Log(hitObstacle.collider.gameObject.name);
             Debug.DrawRay(obstacleRayObject.transform.position, Vector2.right * hitObstacle.distance, Color.red );
+            kolizja = true;
         }else
         {
+            kolizja = false;
             Debug.Log("brak przeszkody");
             Debug.DrawRay(obstacleRayObject.transform.position, Vector2.right * hitObstacle.distance, Color.green );
         }
-        */
+        
     }
 
 }
