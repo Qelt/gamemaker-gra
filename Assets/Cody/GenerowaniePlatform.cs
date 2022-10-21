@@ -13,6 +13,7 @@ public class GenerowaniePlatform : MonoBehaviour
     public float odstep = 20; 
 
     private int losowaniePlatfomy;
+    float przyspieszenie = 0;
 
     void Awake()
     {
@@ -24,6 +25,7 @@ public class GenerowaniePlatform : MonoBehaviour
         Debug.Log(Instance);
     }
 
+
     private void Start() 
     {
         for (int i = 0; i < 5; i++)
@@ -32,6 +34,12 @@ public class GenerowaniePlatform : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        przyspieszenie += Time.deltaTime/10 ;
+        //odstep += przyspieszenie;
+    }
+    
     public void UtworzPlatforme()
     {
         losowaniePlatfomy = Random.Range( 1, 4);
@@ -51,18 +59,18 @@ public class GenerowaniePlatform : MonoBehaviour
     public void UtworzPlatforme1()
     {
         Instantiate(Platforma1, new Vector3(odstep, Random.Range(-6f, -2f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 12;
+        odstep += 12 + przyspieszenie;
     }
 
     public void UtworzPlatforme2()
     {
         Instantiate(Platforma2, new Vector3(odstep - 4, Random.Range(-2f, 2f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 14;
+        odstep += 14 + przyspieszenie;
     }
 
     public void UtworzPlatforme3()
     {
         Instantiate(Platforma3, new Vector3(odstep + 5, Random.Range(-6f, -2f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 12;
+        odstep += 12 + przyspieszenie;
     }
 }

@@ -36,6 +36,7 @@ public class poruszanie3 : MonoBehaviour
     
     //inne
     public bool pozaMapa;
+    float przyspieszenie = 0;
 
 
 
@@ -55,7 +56,9 @@ public class poruszanie3 : MonoBehaviour
     void Update()
     {
         GroundCheck();
-        
+        przyspieszenie += Time.deltaTime/110000 ;
+        przyspieszanieGry();
+
         if (kolizja == false)
         {
             Move();
@@ -63,7 +66,7 @@ public class poruszanie3 : MonoBehaviour
             
         wykrywaniePrzeszkody();
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
         }
@@ -175,14 +178,14 @@ public class poruszanie3 : MonoBehaviour
         
     }
 
-    /*
+    
     void przyspieszanieGry()
     {
-        defaultspeed += ;
-        fastspeed += ;
-        slowspeed += ;
+        defaultspeed += przyspieszenie;
+        fastspeed += przyspieszenie;
+        slowspeed += przyspieszenie;
     }
-    */
+    
 
 
 }
