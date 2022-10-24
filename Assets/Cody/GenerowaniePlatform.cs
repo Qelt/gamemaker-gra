@@ -36,7 +36,7 @@ public class GenerowaniePlatform : MonoBehaviour
 
     private void Update()
     {
-        przyspieszenie += Time.deltaTime/10 ;
+        przyspieszenie += 0.001f ;
         //odstep += przyspieszenie;
     }
     

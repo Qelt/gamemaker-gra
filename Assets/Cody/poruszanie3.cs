@@ -56,7 +56,8 @@ public class poruszanie3 : MonoBehaviour
     void Update()
     {
         GroundCheck();
-        przyspieszenie += Time.deltaTime/110000 ;
+        //przyspieszenie += Time.deltaTime/110000 ;
+        przyspieszenie += 0.00000001f;
         przyspieszanieGry();
 
         if (kolizja == false)
