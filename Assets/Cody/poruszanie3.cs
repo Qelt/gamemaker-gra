@@ -39,6 +39,9 @@ public class poruszanie3 : MonoBehaviour
     float przyspieszenie = 0;
 
 
+    //audio
+    [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private AudioSource jumpLandingSoundEffect;
 
 
     void Awake()
@@ -57,7 +60,7 @@ public class poruszanie3 : MonoBehaviour
     {
         GroundCheck();
         //przyspieszenie += Time.deltaTime/110000 ;
-        przyspieszenie += 0.00000001f;
+        przyspieszenie += 0.000000005f;
         przyspieszanieGry();
 
         if (kolizja == false)
@@ -70,6 +73,7 @@ public class poruszanie3 : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
+            jumpSoundEffect.Play();
         }
 
         if(Input.GetKey(KeyCode.D))
@@ -96,6 +100,11 @@ public class poruszanie3 : MonoBehaviour
             pozaMapa = true;
             Time.timeScale = 0f;
         }
+
+        if (HowManyJumps < 1 & isGrounded == true )
+        {
+            jumpLandingSoundEffect.Play();
+        }
     }
 
     void GroundCheck()
@@ -103,12 +112,14 @@ public class poruszanie3 : MonoBehaviour
         isGrounded = false;
         //Debug.Log("ground");
         Collider2D[] colliders = Physics2D.OverlapCircleAll(GroundCheckCollider.position, GroundCheckRadius, groundLayer);
-        if(colliders.Length > 0)
+        if(colliders.Length > 0 )
         {
             //Debug.Log("ground");
             isGrounded = true;
             HowManyJumps = 1;
-        }    
+            //jumpLandingSoundEffect.Play();
+
+        }
     }
     
     void Jump()

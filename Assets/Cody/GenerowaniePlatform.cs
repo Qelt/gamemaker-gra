@@ -36,14 +36,16 @@ public class GenerowaniePlatform : MonoBehaviour
 
     private void Update()
     {
-        przyspieszenie += 0.001f ;
+        
         //odstep += przyspieszenie;
     }
     
     public void UtworzPlatforme()
     {
+        przyspieszenie += 0.15f ;
+        
         losowaniePlatfomy = Random.Range( 1, 4);
-
+        
         if ( losowaniePlatfomy == 1)
         {
             UtworzPlatforme1();
