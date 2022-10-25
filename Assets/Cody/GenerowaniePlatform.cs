@@ -42,7 +42,7 @@ public class GenerowaniePlatform : MonoBehaviour
     
     public void UtworzPlatforme()
     {
-        przyspieszenie += 0.15f ;
+        przyspieszenie += 0.10f ;
         
         losowaniePlatfomy = Random.Range( 1, 4);
         

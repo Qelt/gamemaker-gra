@@ -73,16 +73,16 @@ public class poruszanie3 : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
-            jumpSoundEffect.Play();
+            
         }
 
-        if(Input.GetKey(KeyCode.D))
+        if(Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             Debug.Log(PrednkoscPoruszania);
             PrednkoscPoruszania = fastspeed;
             //transform.position += new Vector3(0.0075f ,0f ,0f);
 
-        } else if (Input.GetKey(KeyCode.A))
+        } else if (Input.GetKey(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             PrednkoscPoruszania = slowspeed;
         }else
@@ -101,10 +101,7 @@ public class poruszanie3 : MonoBehaviour
             Time.timeScale = 0f;
         }
 
-        if (HowManyJumps < 1 & isGrounded == true )
-        {
-            jumpLandingSoundEffect.Play();
-        }
+        
     }
 
     void GroundCheck()
@@ -116,7 +113,7 @@ public class poruszanie3 : MonoBehaviour
         {
             //Debug.Log("ground");
             isGrounded = true;
-            HowManyJumps = 1;
+            HowManyJumps = 2;
             //jumpLandingSoundEffect.Play();
 
         }
@@ -129,7 +126,8 @@ public class poruszanie3 : MonoBehaviour
            // GetComponent<Rigidbody2D>().velocity = Vector2.up * WysokoscSkoku;
             HowManyJumps = HowManyJumps - 1;
             
-            
+            jumpSoundEffect.Play();
+
             rb.velocity = new Vector2(rb.velocity.x, WysokoscSkoku);
             isJumping = true;
             jumpCounter = 0;
@@ -199,5 +197,12 @@ public class poruszanie3 : MonoBehaviour
     }
     
 
-
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if (isGrounded == true )
+        {
+            jumpLandingSoundEffect.Play();
+            Debug.Log("dźwięk lądowanie");
+        }
+    }
 }
