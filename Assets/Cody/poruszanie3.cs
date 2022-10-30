@@ -42,6 +42,7 @@ public class poruszanie3 : MonoBehaviour
     //audio
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource jumpLandingSoundEffect;
+    [SerializeField] private AudioSource deathSoundEffect;
 
 
     void Awake()
@@ -59,8 +60,9 @@ public class poruszanie3 : MonoBehaviour
     void Update()
     {
         GroundCheck();
+        Sprawdzacze();
         //przyspieszenie += Time.deltaTime/110000 ;
-        przyspieszenie += 0.000000005f;
+        przyspieszenie += 0.000000001f;
         przyspieszanieGry();
 
         if (kolizja == false)
@@ -73,7 +75,6 @@ public class poruszanie3 : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
-            
         }
 
         if(Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
@@ -90,10 +91,10 @@ public class poruszanie3 : MonoBehaviour
             PrednkoscPoruszania = defaultspeed;
         }
 
-         if (rb.velocity.y < 0)
-            {
-                rb.velocity -= vecGravity * fallMultiplier * Time.deltaTime;
-            }
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity -= vecGravity * fallMultiplier * Time.deltaTime;
+        }
 
         if (transform.position.y < -5)
         {
@@ -145,18 +146,6 @@ public class poruszanie3 : MonoBehaviour
                 isJumping = false;
             }
 
-           
-            
-           
-            /*if (rb.velocity.y < 0)
-            {
-                Debug.Log("skok");
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime; 
-            } else if (rb.velocity.y > 0 && !Input.GetButton ("Jump"))
-            {
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-            }
-            */
         }
         
     }
@@ -202,7 +191,15 @@ public class poruszanie3 : MonoBehaviour
         if (isGrounded == true )
         {
             jumpLandingSoundEffect.Play();
-            Debug.Log("dźwięk lądowanie");
+            //Debug.Log("dźwięk lądowanie");
+        }
+    }
+
+    private void Sprawdzacze()
+    {
+        if (pozaMapa == true)
+        {
+            deathSoundEffect.Play();
         }
     }
 }
