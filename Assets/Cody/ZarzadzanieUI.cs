@@ -33,3 +33,4 @@ public class ZarzadzanieUI : MonoBehaviour
         
     }
 }
+
