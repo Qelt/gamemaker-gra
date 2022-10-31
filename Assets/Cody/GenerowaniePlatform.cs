@@ -28,7 +28,7 @@ public class GenerowaniePlatform : MonoBehaviour
 
     private void Start() 
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
             UtworzPlatforme();
         }
@@ -42,7 +42,7 @@ public class GenerowaniePlatform : MonoBehaviour
     
     public void UtworzPlatforme()
     {
-        przyspieszenie += 0.10f ;
+        przyspieszenie += 0.20f ;
         
         losowaniePlatfomy = Random.Range( 1, 4);
         
