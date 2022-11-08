@@ -139,7 +139,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   GroundCheckCollider: {fileID: 8697907153263935883}
-  WysokoscSkoku: 500
+  WysokoscSkoku: 250
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   jumpTime: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   pozaMapa: 0
   jumpSoundEffect: {fileID: 4680443573493807764}
   jumpLandingSoundEffect: {fileID: 5381124321629382112}
+  deathSoundEffect: {fileID: 0}
 --- !u!50 &9103431711258534716
 Rigidbody2D:
   serializedVersion: 4

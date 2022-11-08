@@ -10,7 +10,7 @@ public class GenerowaniePlatform : MonoBehaviour
     public GameObject Platforma1;
     public GameObject Platforma2;
     public GameObject Platforma3;
-    public float odstep = 20; 
+    public float odstep = 5; 
 
     private int losowaniePlatfomy;
     float przyspieszenie = 0;
@@ -42,7 +42,7 @@ public class GenerowaniePlatform : MonoBehaviour
     
     public void UtworzPlatforme()
     {
-        przyspieszenie += 0.20f ;
+        przyspieszenie += 0.05f ;
         
         losowaniePlatfomy = Random.Range( 1, 4);
         
@@ -60,19 +60,19 @@ public class GenerowaniePlatform : MonoBehaviour
 
     public void UtworzPlatforme1()
     {
-        Instantiate(Platforma1, new Vector3(odstep, Random.Range(-6f, -2f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 12 + przyspieszenie;
+        Instantiate(Platforma1, new Vector3(odstep, Random.Range(-6f, -4f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 8 + przyspieszenie;
     }
 
     public void UtworzPlatforme2()
     {
-        Instantiate(Platforma2, new Vector3(odstep - 4, Random.Range(-2f, 2f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 14 + przyspieszenie;
+        Instantiate(Platforma2, new Vector3(odstep - 4, Random.Range(-2f, 0f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 10 + przyspieszenie;
     }
 
     public void UtworzPlatforme3()
     {
-        Instantiate(Platforma3, new Vector3(odstep + 5, Random.Range(-6f, -2f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 12 + przyspieszenie;
+        Instantiate(Platforma3, new Vector3(odstep + 5, Random.Range(-6f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 8 + przyspieszenie;
     }
 }

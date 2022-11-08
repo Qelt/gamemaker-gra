@@ -37,6 +37,7 @@ public class poruszanie3 : MonoBehaviour
     //inne
     public bool pozaMapa;
     float przyspieszenie = 0;
+    public int OnedeathSound = 1;
 
 
     //audio
@@ -50,6 +51,7 @@ public class poruszanie3 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         Time.timeScale = 1f;
+        OnedeathSound = 1;
     }
 
     private void FixedUpdate() 
@@ -197,9 +199,10 @@ public class poruszanie3 : MonoBehaviour
 
     private void Sprawdzacze()
     {
-        if (pozaMapa == true)
+        if (pozaMapa == true && OnedeathSound == 1)
         {
             deathSoundEffect.Play();
+            OnedeathSound -= 1;
         }
     }
 }
