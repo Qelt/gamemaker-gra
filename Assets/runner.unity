@@ -2142,6 +2142,8 @@ MonoBehaviour:
   Platforma1: {fileID: 8003804680199834700, guid: 38e140005f64bbf439a73fc3833eefcc, type: 3}
   Platforma2: {fileID: 1067605343497912742, guid: b84c60251995f494aa2305805b4336d6, type: 3}
   Platforma3: {fileID: 8421514894577926367, guid: 553f0fb120ed78f418b062922d0e1143, type: 3}
+  Platforma4: {fileID: 1311107566827917401, guid: 8394bfe20956bd44d96fab172f271555, type: 3}
+  Platforma5: {fileID: 6830454227108762167, guid: c1d0c0f193dfa5e44a03e9797f3b213e, type: 3}
   odstep: 20
 --- !u!4 &1715067468
 Transform:
