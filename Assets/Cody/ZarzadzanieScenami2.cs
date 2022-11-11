@@ -10,15 +10,8 @@ public class ZarzadzanieScenami2 : MonoBehaviour
         SceneManager.LoadScene(1);
     }
     
-    // Start is called before the first frame update
-    void Start()
+    public void ScenaMenu()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene(0);
     }
 }

@@ -44,7 +44,7 @@ public class GenerowaniePlatform : MonoBehaviour
     
     public void UtworzPlatforme()
     {
-        przyspieszenie += 0.05f ;
+        przyspieszenie += 0.005f ;
         
         losowaniePlatfomy = Random.Range( 1, 6);
         
@@ -86,13 +86,13 @@ public class GenerowaniePlatform : MonoBehaviour
 
     public void UtworzPlatforme4()
     {
-        Instantiate(Platforma4, new Vector3(odstep - 2, Random.Range(-6f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
+        Instantiate(Platforma4, new Vector3(odstep - 2, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
         odstep += 10 + przyspieszenie;
     }
 
     public void UtworzPlatforme5()
     {
-        Instantiate(Platforma5, new Vector3(odstep - 11, Random.Range( -3f, 0f), 0), Quaternion.Euler(0, 0, 0)) ;
+        Instantiate(Platforma5, new Vector3(odstep - 11, Random.Range( -2f, 1f), 0), Quaternion.Euler(0, 0, 0)) ;
         odstep += 21 + przyspieszenie;
     }
 }
