@@ -329,7 +329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: WysokoscSkoku
-      value: 5
+      value: 4.8
       objectReference: {fileID: 0}
     - target: {fileID: -2426688396296534321, guid: b4eb14c0db8d41b46bd74a645b46e287, type: 3}
       propertyPath: fallMultiplier
@@ -2419,6 +2419,7 @@ MonoBehaviour:
   Platforma3: {fileID: 8421514894577926367, guid: 553f0fb120ed78f418b062922d0e1143, type: 3}
   Platforma4: {fileID: 1311107566827917401, guid: 8394bfe20956bd44d96fab172f271555, type: 3}
   Platforma5: {fileID: 6830454227108762167, guid: c1d0c0f193dfa5e44a03e9797f3b213e, type: 3}
+  Platforma6: {fileID: 8116480418767456059, guid: 4cfadcd42ebc2854598afe592faf73c1, type: 3}
   odstep: 20
 --- !u!4 &1715067468
 Transform:
