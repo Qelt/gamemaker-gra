@@ -12,6 +12,7 @@ public class GenerowaniePlatform : MonoBehaviour
     public GameObject Platforma3;
     public GameObject Platforma4;
     public GameObject Platforma5;
+    public GameObject Platforma6;
     public float odstep = 5; 
 
     private int losowaniePlatfomy;
@@ -44,9 +45,9 @@ public class GenerowaniePlatform : MonoBehaviour
     
     public void UtworzPlatforme()
     {
-        przyspieszenie += 0.05f ;
+        przyspieszenie += 0.005f ;
         
-        losowaniePlatfomy = Random.Range( 1, 6);
+        losowaniePlatfomy = Random.Range( 1, 7);
         
         if ( losowaniePlatfomy == 1)
         {
@@ -63,6 +64,9 @@ public class GenerowaniePlatform : MonoBehaviour
         }else if (losowaniePlatfomy == 5)
         {
             UtworzPlatforme5();
+        }else if (losowaniePlatfomy == 6)
+        {
+            UtworzPlatforme6();
         }
     }
 
@@ -80,19 +84,25 @@ public class GenerowaniePlatform : MonoBehaviour
 
     public void UtworzPlatforme3()
     {
-        Instantiate(Platforma3, new Vector3(odstep + 5, Random.Range(-6f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 8 + przyspieszenie;
+        Instantiate(Platforma3, new Vector3(odstep + 6, Random.Range(-6f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 9 + przyspieszenie;
     }
 
     public void UtworzPlatforme4()
     {
-        Instantiate(Platforma4, new Vector3(odstep - 2, Random.Range(-6f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
+        Instantiate(Platforma4, new Vector3(odstep - 2, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
         odstep += 10 + przyspieszenie;
     }
 
     public void UtworzPlatforme5()
     {
-        Instantiate(Platforma5, new Vector3(odstep - 11, Random.Range( -3f, 0f), 0), Quaternion.Euler(0, 0, 0)) ;
+        Instantiate(Platforma5, new Vector3(odstep - 11, Random.Range( -2f, 1f), 0), Quaternion.Euler(0, 0, 0)) ;
         odstep += 21 + przyspieszenie;
+    }
+
+    public void UtworzPlatforme6()
+    {
+        Instantiate(Platforma6, new Vector3(odstep - 3, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 8 + przyspieszenie;
     }
 }
