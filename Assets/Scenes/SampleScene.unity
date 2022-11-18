@@ -381,7 +381,7 @@ Canvas:
   m_GameObject: {fileID: 415952800}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 558075582}
   - component: {fileID: 558075581}
   m_Layer: 0
-  m_Name: pixil-frame-0 13
+  m_Name: logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1275,7 +1275,7 @@ GameObject:
   - component: {fileID: 1991574901}
   - component: {fileID: 1991574900}
   m_Layer: 0
-  m_Name: pixil-frame-0 8
+  m_Name: tlo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
