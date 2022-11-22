@@ -9,6 +9,14 @@ public class ekranKoncowy : MonoBehaviour
     
     poruszanie3 odnosnikDoPoruszaniaGracza; 
     
+
+    public void koniecPausy()
+    {
+        Time.timeScale = 1f;
+        Pause.SetActive(false);
+        Debug.Log("stop");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +36,7 @@ public class ekranKoncowy : MonoBehaviour
             panelKoncaGry.SetActive(false);
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Escape))
         {
             Time.timeScale = 0f;
             Pause.SetActive(true);
@@ -36,9 +44,4 @@ public class ekranKoncowy : MonoBehaviour
 
         
     }
-    void koniecPausy()
-        {
-            Time.timeScale = 1f;
-            Pause.SetActive(false);
-        }
 }
