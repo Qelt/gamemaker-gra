@@ -5,6 +5,7 @@ using UnityEngine;
 public class ekranKoncowy : MonoBehaviour
 {
     public GameObject panelKoncaGry;
+    public GameObject Pause;
     
     poruszanie3 odnosnikDoPoruszaniaGracza; 
     
@@ -12,6 +13,8 @@ public class ekranKoncowy : MonoBehaviour
     void Start()
     {
         odnosnikDoPoruszaniaGracza = FindObjectOfType<poruszanie3>();
+        Pause.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -24,5 +27,18 @@ public class ekranKoncowy : MonoBehaviour
         {
             panelKoncaGry.SetActive(false);
         }
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            Time.timeScale = 0f;
+            Pause.SetActive(true);
+        }
+
+        
     }
+    void koniecPausy()
+        {
+            Time.timeScale = 1f;
+            Pause.SetActive(false);
+        }
 }
