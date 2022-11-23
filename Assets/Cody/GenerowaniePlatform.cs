@@ -72,7 +72,7 @@ public class GenerowaniePlatform : MonoBehaviour
 
     public void UtworzPlatforme1()
     {
-        Instantiate(Platforma1, new Vector3(odstep, Random.Range(-6f, -4f), 0), Quaternion.Euler(0, 0, 0)) ;
+        Instantiate(Platforma1, new Vector3(odstep + 1, Random.Range(-6f, -4f), 0), Quaternion.Euler(0, 0, 0)) ;
         odstep += 8 + przyspieszenie;
     }
 
@@ -103,6 +103,6 @@ public class GenerowaniePlatform : MonoBehaviour
     public void UtworzPlatforme6()
     {
         Instantiate(Platforma6, new Vector3(odstep - 3, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 8 + przyspieszenie;
+        odstep += 9 + przyspieszenie;
     }
 }

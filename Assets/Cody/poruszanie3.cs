@@ -9,7 +9,7 @@ public class poruszanie3 : MonoBehaviour
     
     //grand chack
     public bool isGrounded = false;
-    const float GroundCheckRadius = 0.005f;
+    const float GroundCheckRadius = 0.003f;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform GroundCheckCollider;
     
