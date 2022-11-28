@@ -6,6 +6,7 @@ public class ekranKoncowy : MonoBehaviour
 {
     public GameObject panelKoncaGry;
     public GameObject Pause;
+    public GameObject scoreBoard;
     
     poruszanie3 odnosnikDoPoruszaniaGracza; 
     
@@ -31,9 +32,11 @@ public class ekranKoncowy : MonoBehaviour
         if (odnosnikDoPoruszaniaGracza.pozaMapa == true)
         {
             panelKoncaGry.SetActive(true);
+            scoreBoard.SetActive(true);
         }else
         {
             panelKoncaGry.SetActive(false);
+            scoreBoard.SetActive(false);
         }
 
         if (Input.GetKey(KeyCode.Escape))
