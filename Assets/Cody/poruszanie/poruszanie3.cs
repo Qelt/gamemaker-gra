@@ -9,7 +9,7 @@ public class poruszanie3 : MonoBehaviour
     
     //grand chack
     public bool isGrounded = false;
-    const float GroundCheckRadius = 0.005f;
+    const float GroundCheckRadius = 0.003f;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform GroundCheckCollider;
     
@@ -37,6 +37,7 @@ public class poruszanie3 : MonoBehaviour
     //inne
     public bool pozaMapa;
     float przyspieszenie = 0;
+    public int OnedeathSound = 1;
 
 
     //audio
@@ -50,11 +51,12 @@ public class poruszanie3 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         Time.timeScale = 1f;
+        OnedeathSound = 1;
     }
 
     private void FixedUpdate() 
     {
-         
+        
     }
 
     void Update()
@@ -62,7 +64,7 @@ public class poruszanie3 : MonoBehaviour
         GroundCheck();
         Sprawdzacze();
         //przyspieszenie += Time.deltaTime/110000 ;
-        przyspieszenie += 0.000000001f;
+        przyspieszenie += 0.00000001f;
         przyspieszanieGry();
 
         if (kolizja == false)
@@ -197,9 +199,10 @@ public class poruszanie3 : MonoBehaviour
 
     private void Sprawdzacze()
     {
-        if (pozaMapa == true)
+        if (pozaMapa == true && OnedeathSound == 1)
         {
             deathSoundEffect.Play();
+            OnedeathSound -= 1;
         }
     }
 }

@@ -7,7 +7,7 @@ public class ZarzadzanieUI : MonoBehaviour
 {
     public TextMeshProUGUI punktyWGrzeTekst;
     public TextMeshProUGUI punktyEkranKonca;
-    float punkty; 
+    float punkty;
 
     [SerializeField] private AudioSource punktSoundEffect;
     
