@@ -388,6 +388,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5273204160661986419, guid: b111a4fce078c164eaec1b869423e286, type: 3}
+      propertyPath: Ground
+      value: 
+      objectReference: {fileID: 822513272}
+    - target: {fileID: 5273204160661986419, guid: b111a4fce078c164eaec1b869423e286, type: 3}
       propertyPath: rayDistance
       value: 0.5
       objectReference: {fileID: 0}
@@ -1860,6 +1864,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650183966}
   m_CullTransparentMesh: 1
+--- !u!198 &822513272 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7478935242458163445, guid: 70abb7dc604a5224fb83fa6c171bd2a5, type: 3}
+  m_PrefabInstance: {fileID: 7478935241151869965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &905873101
 GameObject:
   m_ObjectHideFlags: 0
@@ -4323,6 +4332,14 @@ PrefabInstance:
     - target: {fileID: 7478935242458163444, guid: 70abb7dc604a5224fb83fa6c171bd2a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478935242458163445, guid: 70abb7dc604a5224fb83fa6c171bd2a5, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478935242458163450, guid: 70abb7dc604a5224fb83fa6c171bd2a5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7478935242458163451, guid: 70abb7dc604a5224fb83fa6c171bd2a5, type: 3}
       propertyPath: m_Name

@@ -45,6 +45,9 @@ public class poruszanie3 : MonoBehaviour
     [SerializeField] private AudioSource jumpLandingSoundEffect;
     [SerializeField] private AudioSource deathSoundEffect;
 
+    //particle
+    public ParticleSystem Ground;
+
 
     void Awake()
     {
@@ -64,7 +67,7 @@ public class poruszanie3 : MonoBehaviour
         GroundCheck();
         Sprawdzacze();
         //przyspieszenie += Time.deltaTime/110000 ;
-        przyspieszenie += 0.00000001f;
+        przyspieszenie += 0.000000002f;
         przyspieszanieGry();
 
         if (kolizja == false)
@@ -81,7 +84,7 @@ public class poruszanie3 : MonoBehaviour
 
         if(Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Debug.Log(PrednkoscPoruszania);
+            //Debug.Log(PrednkoscPoruszania);
             PrednkoscPoruszania = fastspeed;
             //transform.position += new Vector3(0.0075f ,0f ,0f);
 
@@ -193,7 +196,8 @@ public class poruszanie3 : MonoBehaviour
         if (isGrounded == true )
         {
             jumpLandingSoundEffect.Play();
-            //Debug.Log("dźwięk lądowanie");
+            particleGround();
+            
         }
     }
 
@@ -204,5 +208,10 @@ public class poruszanie3 : MonoBehaviour
             deathSoundEffect.Play();
             OnedeathSound -= 1;
         }
+    }
+
+    void particleGround()
+    {
+        Ground.Play();
     }
 }
