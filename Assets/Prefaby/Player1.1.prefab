@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3087586776221878771}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4638989518543331341}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ObstacleRay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6604263936200436856}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.96, z: 0}
+  m_LocalPosition: {x: 2.31, y: 2.85, z: 0}
   m_LocalScale: {x: 9.090909, y: 9.090909, z: 9.090909}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 6030354349340281968}
   - component: {fileID: 2762790098876210661}
   - component: {fileID: 4459885768628208225}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player1.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ MonoBehaviour:
   fastspeed: 9
   slowspeed: 5
   obstacleRayObject: {fileID: 6604263936200436856}
-  rayDistance: 0.6
+  rayDistance: 8
   kolizja: 0
   pozaMapa: 0
   OnedeathSound: 1
@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 7240909514702572068}
   - component: {fileID: 7440371779836753619}
   - component: {fileID: 431092762154213604}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7478935242458163444, guid: 70abb7dc604a5224fb83fa6c171bd2a5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.03
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 7478935242458163444, guid: 70abb7dc604a5224fb83fa6c171bd2a5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -709,7 +709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7478935242458163445, guid: 70abb7dc604a5224fb83fa6c171bd2a5, type: 3}
       propertyPath: stopAction
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7478935242458163445, guid: 70abb7dc604a5224fb83fa6c171bd2a5, type: 3}
       propertyPath: autoRandomSeed
@@ -778,6 +778,10 @@ PrefabInstance:
     - target: {fileID: 7478935242458163451, guid: 70abb7dc604a5224fb83fa6c171bd2a5, type: 3}
       propertyPath: m_Name
       value: Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478935242458163451, guid: 70abb7dc604a5224fb83fa6c171bd2a5, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70abb7dc604a5224fb83fa6c171bd2a5, type: 3}

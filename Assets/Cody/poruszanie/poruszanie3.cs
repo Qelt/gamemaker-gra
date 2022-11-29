@@ -212,6 +212,9 @@ public class poruszanie3 : MonoBehaviour
 
     void particleGround()
     {
+        Debug.Log("ground");
+        var main = Ground.main;
+        main.startColor = Color.red;
         Ground.Play();
     }
 }

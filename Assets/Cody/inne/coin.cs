@@ -42,7 +42,7 @@ public class coin : MonoBehaviour
     {
         if (oneRepeat == 1)
         {
-        Destroy(this);
+        Destroy(this.gameObject);
         oneRepeat -= 1;
         Debug.Log("coin trigger");
         }
