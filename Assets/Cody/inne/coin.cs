@@ -6,6 +6,9 @@ public class coin : MonoBehaviour
 {
     private int ratio;
     private int oneRepeat = 1;
+    coinPoints odnosnikDoCoinPoints;
+
+
     
     
     // Start is called before the first frame update
@@ -14,12 +17,13 @@ public class coin : MonoBehaviour
         ratio = Random.Range( 1, 2);
         if (ratio == 1)
         {
-            transform.position += new Vector3(Random.Range( -500f, 350f) ,0f) * Time.deltaTime;
+            transform.position += new Vector3(Random.Range( -350f, 350f) ,0f) * Time.deltaTime;
             
         }else
         {
             Destroy(this);
         }
+        odnosnikDoCoinPoints = FindObjectOfType<coinPoints>();
     }
 
     // Update is called once per frame
@@ -42,9 +46,11 @@ public class coin : MonoBehaviour
     {
         if (oneRepeat == 1)
         {
+        odnosnikDoCoinPoints.addCoinPoint();
         Destroy(this.gameObject);
         oneRepeat -= 1;
         Debug.Log("coin trigger");
+        
         }
     }
 }
