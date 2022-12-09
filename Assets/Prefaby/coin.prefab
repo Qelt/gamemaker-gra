@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e122daf479f96c44a94ddc356b502de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallingObject: {fileID: 355449154093946655, guid: fac8c4f629f91754bb5477cf91ea8e91, type: 3}
 --- !u!61 &2895523970696976582
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -2313,7 +2313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -150.00003, y: 0}
+  m_AnchoredPosition: {x: -150, y: 0}
   m_SizeDelta: {x: -800.2429, y: -130.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1108520884
@@ -3651,6 +3651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   punktyWGrzeTekst: {fileID: 650183968}
   punktyEkranKonca: {fileID: 905873103}
+  punkty: 0
   punktSoundEffect: {fileID: 1868932067}
 --- !u!4 &1868932065
 Transform:
@@ -4081,7 +4082,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 2136212535}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -4366,7 +4367,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
