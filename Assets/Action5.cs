@@ -18,7 +18,8 @@ public class Action5 : MonoBehaviour
             
         }else if (ratio == 2)
         {
-            Instantiate(fallingObject, new Vector3(0f, Random.Range(-200f, 200f), 0), Quaternion.Euler(0, 0, 0)) ;
+            transform.position += new Vector3(Random.Range(-10f, 10f), 0f, 0f);
+            //Instantiate(fallingObject, new Vector3(0f, Random.Range(-300f, 300f), 0), Quaternion.Euler(0, 0, 0)) ;
             Destroy(this.coin);
             
         }else

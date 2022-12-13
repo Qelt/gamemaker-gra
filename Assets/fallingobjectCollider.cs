@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class fallingobjectCollider : MonoBehaviour
 {
+    [SerializeField]
     fallingObject odnosnikdofallingobject;
-    void OnTrigerEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         odnosnikdofallingobject.startAction();
         Debug.Log("falingObject");
