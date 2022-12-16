@@ -211,7 +211,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5767935720118111425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1b1e0a1898a97443a0c57dc5caa8abc, type: 3}
+  m_Script: {fileID: 11500000, guid: 481becdd4119e914cb42a28dcf873dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fallingObject: {fileID: 118534923620752575}
@@ -371,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 84937323607542998, guid: fac8c4f629f91754bb5477cf91ea8e91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 84937323607542998, guid: fac8c4f629f91754bb5477cf91ea8e91, type: 3}
       propertyPath: m_LocalPosition.z
@@ -424,6 +424,10 @@ PrefabInstance:
     - target: {fileID: 5415713548143874002, guid: fac8c4f629f91754bb5477cf91ea8e91, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513911029807897784, guid: fac8c4f629f91754bb5477cf91ea8e91, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8841430072855055637, guid: fac8c4f629f91754bb5477cf91ea8e91, type: 3}
       propertyPath: m_SortingOrder

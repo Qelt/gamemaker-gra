@@ -25,19 +25,21 @@ public class poruszanie3 : MonoBehaviour
     float jumpCounter;
     private float PrednkoscPoruszania;
     public int HowManyJumps;
-    public float defaultspeed;
-    public float fastspeed;
-    public float slowspeed;
+    public float defaultspeed = 7f;
+    public float fastspeed = 9f;
+    public float slowspeed = 4.5f;
     
     //wykrywanie przeszkody
     public GameObject obstacleRayObject;
-    [SerializeField] float rayDistance;
+    [SerializeField] float rayDistance = 0.45f;
     public bool kolizja;
     
     //inne
     public bool pozaMapa;
     float przyspieszenie = 0;
     public int OnedeathSound = 1;
+
+    public bool isPlayerDeath = false;
 
 
     //audio
@@ -59,7 +61,7 @@ public class poruszanie3 : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        
+        przyspieszenie += 0.00000002f;
     }
 
     void Update()
@@ -67,20 +69,27 @@ public class poruszanie3 : MonoBehaviour
         GroundCheck();
         Sprawdzacze();
         //przyspieszenie += Time.deltaTime/110000 ;
-        przyspieszenie += 0.000000002f;
+        //przyspieszenie += 0.000000001f;
         przyspieszanieGry();
 
         if (kolizja == false)
         {
             Move();
+            
+            if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Jump();
+            }
         }
             
         wykrywaniePrzeszkody();
 
+        /*
         if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
         }
+        */
 
         if(Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -104,7 +113,6 @@ public class poruszanie3 : MonoBehaviour
         if (transform.position.y < -5)
         {
             pozaMapa = true;
-            Time.timeScale = 0f;
         }
 
         
@@ -203,10 +211,20 @@ public class poruszanie3 : MonoBehaviour
 
     private void Sprawdzacze()
     {
-        if (pozaMapa == true && OnedeathSound == 1)
+        if (pozaMapa == true )
+        {
+            isPlayerDeath = true;
+        }
+        
+        if (isPlayerDeath == true && OnedeathSound == 1)
         {
             deathSoundEffect.Play();
             OnedeathSound -= 1;
+        }
+
+        if (isPlayerDeath == true)
+        {
+            Time.timeScale = 0f;
         }
     }
 
@@ -216,5 +234,10 @@ public class poruszanie3 : MonoBehaviour
         var main = Ground.main;
         main.startColor = Color.red;
         Ground.Play();
+    }
+
+    public void playerDeath()
+    {
+        isPlayerDeath = true;
     }
 }
