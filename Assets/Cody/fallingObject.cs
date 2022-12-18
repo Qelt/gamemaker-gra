@@ -44,6 +44,6 @@ public class fallingObject : MonoBehaviour
             boom.Play();
             howManyRepeat -= 1;
         }
-        
+   
     }
 }
