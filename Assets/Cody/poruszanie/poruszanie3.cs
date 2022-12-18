@@ -39,6 +39,8 @@ public class poruszanie3 : MonoBehaviour
     float przyspieszenie = 0;
     public int OnedeathSound = 1;
 
+    coinPoints odnosnikdoCoinPoints;
+
     public bool isPlayerDeath = false;
 
 
@@ -49,6 +51,7 @@ public class poruszanie3 : MonoBehaviour
 
     //particle
     public ParticleSystem Ground;
+    [SerializeField] ParticleSystem deathParticle;
 
 
     void Awake()
@@ -57,6 +60,7 @@ public class poruszanie3 : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         Time.timeScale = 1f;
         OnedeathSound = 1;
+        odnosnikdoCoinPoints = FindObjectOfType<coinPoints>();
     }
 
     private void FixedUpdate() 
@@ -220,6 +224,8 @@ public class poruszanie3 : MonoBehaviour
         {
             deathSoundEffect.Play();
             OnedeathSound -= 1;
+            deathParticle.Play();
+            odnosnikdoCoinPoints.activateSaveToJson();
         }
 
         if (isPlayerDeath == true)

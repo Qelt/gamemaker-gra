@@ -9,6 +9,7 @@ public class fallingObject : MonoBehaviour
 
     private int howManyRepeat = 3;
     [SerializeField] ParticleSystem boom;
+    [SerializeField] private AudioSource boomaudioefect;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +25,15 @@ public class fallingObject : MonoBehaviour
             transform.position += new Vector3(0f, fallingObjectSpeed ,0f) * Time.deltaTime;
         }
 
-        if (transform.position.y < -0.5f)
+        
+        if (transform.position.y < -5f)
         {
             fallingObjectSpeed = 0f;
             particleBoom();
+            boomaudioefect.Play();
+            Debug.Log("boom");
         }
+        
     }
 
     public void startAction()
@@ -45,5 +50,16 @@ public class fallingObject : MonoBehaviour
             howManyRepeat -= 1;
         }
    
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        fallingObjectSpeed = 0f;
+        if (other.gameObject.name == "Budynek5")
+        {
+            fallingObjectSpeed = 0f;
+            particleBoom();
+            boomaudioefect.Play();
+        }
     }
 }

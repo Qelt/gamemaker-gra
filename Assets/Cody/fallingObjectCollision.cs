@@ -9,11 +9,14 @@ public class fallingObjectCollision : MonoBehaviour
     //[SerializeField] LayerMask playerLayer;
     //[SerializeField] float checkRadius = 0.1f;
 
-    [SerializeField]poruszanie3 odnosnikdoporuszanie3;
+    poruszanie3 odnosnikDoPoruszaniaGracza;
+    [SerializeField] ParticleSystem boom;
+    [SerializeField] private AudioSource boomaudioefect;
+    private int howManyRepeat = 10;
     // Start is called before the first frame update
     void Start()
     {
-        
+        odnosnikDoPoruszaniaGracza = FindObjectOfType<poruszanie3>();
     }
 
     void Update()
@@ -21,7 +24,10 @@ public class fallingObjectCollision : MonoBehaviour
         if (collisionWithPlayer == true)
         {
             Debug.Log("collsion");
-            odnosnikdoporuszanie3.playerDeath();
+            odnosnikDoPoruszaniaGracza.playerDeath();
+            particleBoom();
+            boomaudioefect.Play();
+
         }
     }
  
@@ -31,6 +37,17 @@ public class fallingObjectCollision : MonoBehaviour
         {
             collisionWithPlayer = true;
         }
+    }
+
+    void particleBoom()
+    {
+        if (howManyRepeat > 0)
+        {
+            var main = boom.main;
+            boom.Play();
+            howManyRepeat -= 1;
+        }
+   
     }
  
  
