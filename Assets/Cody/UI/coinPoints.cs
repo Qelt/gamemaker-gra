@@ -9,17 +9,27 @@ public class coinPoints : MonoBehaviour
     
     public coinSave coinsave = new coinSave();
     public TextMeshProUGUI coinPointsText;
-    public float CoinPoints;
+
+    public TextMeshProUGUI menuCoinAmount;
+    public float CoinPointsLive;
+
+    public float totalCoinPoints;
     
+    void Awake()
+    {
+        LoadFromJson();
+    }
+
     public void addCoinPoint()
     {
-        CoinPoints++;
-        coinPointsText.text = CoinPoints.ToString();
+        CoinPointsLive++;
+        coinPointsText.text = CoinPointsLive.ToString();
     }
 
     public void activateSaveToJson()
     {
         SaveToJson();
+        
     }
 
     public void SaveToJson()
@@ -31,10 +41,20 @@ public class coinPoints : MonoBehaviour
         System.IO.File.WriteAllText(filePath, coinData);
         Debug.Log("Save Sukces");
     }
+
+    public void LoadFromJson()
+    {
+        string filePath = Application.persistentDataPath + "/CoinSave.json";
+        string coinData = System.IO.File.ReadAllText(filePath);
+
+        coinsave = JsonUtility.FromJson<coinSave>(coinData);
+        Debug.Log("Sukces Load Coin Data");
+    }
 }
 
 [System.Serializable]
 public class coinSave
 {
     public int howManyCoins;
+
 }
