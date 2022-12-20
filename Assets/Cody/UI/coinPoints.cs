@@ -24,6 +24,7 @@ public class coinPoints : MonoBehaviour
     {
         CoinPointsLive++;
         coinPointsText.text = CoinPointsLive.ToString();
+        coinsave.howManyCoins++;
     }
 
     public void activateSaveToJson()

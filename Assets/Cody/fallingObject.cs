@@ -55,10 +55,13 @@ public class fallingObject : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         fallingObjectSpeed = 0f;
-        if (other.gameObject.name == "Budynek5")
+        //boomaudioefect.Play();
+        
+        if (other.gameObject.CompareTag("Budynek"));
         {
             fallingObjectSpeed = 0f;
             particleBoom();
+            Debug.Log("Sound");
             boomaudioefect.Play();
         }
     }

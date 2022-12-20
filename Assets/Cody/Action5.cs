@@ -10,7 +10,7 @@ public class Action5 : MonoBehaviour
 
     void Start()
     {
-        ratio = Random.Range( 2, 3);
+        ratio = Random.Range( 1, 3);
         if (ratio == 1)
         {
             Instantiate(coin, new Vector3(0f, Random.Range(-350f, 350f), 0), Quaternion.Euler(0, 0, 0)) ;
