@@ -18,6 +18,7 @@ public class coinPoints : MonoBehaviour
     void Awake()
     {
         LoadFromJson();
+        menuCoinAmount.text = coinsave.howManyCoins.ToString();
     }
 
     public void addCoinPoint()

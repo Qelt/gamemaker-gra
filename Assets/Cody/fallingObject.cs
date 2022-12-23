@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ParticleSystemJobs;
 
 public class fallingObject : MonoBehaviour
 {
     public bool move = false;
     private float fallingObjectSpeed = -7f;
+
+    public float time = 1;
 
     private int howManyRepeat = 3;
     [SerializeField] ParticleSystem boom;
@@ -34,10 +37,22 @@ public class fallingObject : MonoBehaviour
             Debug.Log("boom");
         }
         
+       
     }
 
-    public void startAction()
+
+    void FixedUpdate()
     {
+        if (Time.timeScale < 0.01f)
+        {
+           //ParticleSystem.Simulate(Time.deltaTime, true, false);
+        }
+    }
+
+    //public void Simulate(float t, bool withChildren = true, bool restart = true, bool fixedTimeStep = true);
+
+    public void startAction()
+    {                       
         move = true;
     }
 
@@ -57,7 +72,7 @@ public class fallingObject : MonoBehaviour
         fallingObjectSpeed = 0f;
         //boomaudioefect.Play();
         
-        if (other.gameObject.CompareTag("Budynek"));
+        if (other.gameObject.CompareTag("Budynek"))
         {
             fallingObjectSpeed = 0f;
             particleBoom();
