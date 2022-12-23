@@ -15,7 +15,7 @@ public class GenerowaniePlatform : MonoBehaviour
     public GameObject Platforma6;
     public GameObject Platforma7;
     public GameObject Platforma8;
-    public float odstep = 5; 
+    public float odstep = 20; 
 
     private int losowaniePlatfomy;
     float przyspieszenie = 0;
