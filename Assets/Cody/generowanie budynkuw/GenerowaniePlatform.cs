@@ -15,6 +15,8 @@ public class GenerowaniePlatform : MonoBehaviour
     public GameObject Platforma6;
     public GameObject Platforma7;
     public GameObject Platforma8;
+    public GameObject Platforma9;
+    public GameObject Platforma10;
     public float odstep = 20; 
 
     private int losowaniePlatfomy;
@@ -49,7 +51,7 @@ public class GenerowaniePlatform : MonoBehaviour
     {
         przyspieszenie += 0.0025f ;
         
-        losowaniePlatfomy = Random.Range( 1, 9);
+        losowaniePlatfomy = Random.Range( 1, 11);
         
         if ( losowaniePlatfomy == 1)
         {
@@ -75,6 +77,12 @@ public class GenerowaniePlatform : MonoBehaviour
         }else if (losowaniePlatfomy == 8)
         {
             UtworzPlatforme8();
+        }else if (losowaniePlatfomy == 9)
+        {
+            UtworzPlatforme9();
+        }else if (losowaniePlatfomy == 10)
+        {
+            UtworzPlatforme10();
         }
     }
 
@@ -124,5 +132,17 @@ public class GenerowaniePlatform : MonoBehaviour
     {
         Instantiate(Platforma8, new Vector3(odstep - 9, Random.Range( -2f, 1f), 0), Quaternion.Euler(0, 0, 0)) ;
         odstep += 21 + przyspieszenie;
+    }
+
+    public void UtworzPlatforme9()
+    {
+        Instantiate(Platforma9, new Vector3(odstep - 3, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 9 + przyspieszenie;
+    }
+
+    public void UtworzPlatforme10()
+    {
+        Instantiate(Platforma10, new Vector3(odstep - 3, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 9 + przyspieszenie;
     }
 }
