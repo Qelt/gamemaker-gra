@@ -136,13 +136,13 @@ public class GenerowaniePlatform : MonoBehaviour
 
     public void UtworzPlatforme9()
     {
-        Instantiate(Platforma9, new Vector3(odstep - 3, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 9 + przyspieszenie;
+        Instantiate(Platforma9, new Vector3(odstep - 1, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 12 + przyspieszenie;
     }
 
     public void UtworzPlatforme10()
     {
-        Instantiate(Platforma10, new Vector3(odstep - 3, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 9 + przyspieszenie;
+        Instantiate(Platforma10, new Vector3(odstep - 1, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 12 + przyspieszenie;
     }
 }
