@@ -52,6 +52,7 @@ public class poruszanie3 : MonoBehaviour
     //particle
     public ParticleSystem Ground;
     [SerializeField] ParticleSystem deathParticle;
+    ZarzadzanieUI odnosnikDoZarzadzaniaUI;
 
 
     void Awake()
@@ -61,6 +62,7 @@ public class poruszanie3 : MonoBehaviour
         Time.timeScale = 1f;
         OnedeathSound = 1;
         odnosnikdoCoinPoints = FindObjectOfType<coinPoints>();
+        odnosnikDoZarzadzaniaUI = FindObjectOfType<ZarzadzanieUI>();
     }
 
     private void FixedUpdate() 
@@ -194,7 +196,6 @@ public class poruszanie3 : MonoBehaviour
         
     }
 
-    
     void przyspieszanieGry()
     {
         defaultspeed += przyspieszenie;
@@ -226,6 +227,8 @@ public class poruszanie3 : MonoBehaviour
             OnedeathSound -= 1;
             deathParticle.Play();
             odnosnikdoCoinPoints.activateSaveToJson();
+            odnosnikDoZarzadzaniaUI.pointsSaveToJson();
+
         }
 
         if (isPlayerDeath == true)
