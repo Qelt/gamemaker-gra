@@ -15,9 +15,9 @@ public class coinPoints : MonoBehaviour
 
     public float totalCoinPoints;
 
-    public int item1Price;
-    public int item2Price;
-    public int item3Price;
+    public int item1Price = 10;
+    public int item2Price = 1;
+    public int item3Price = 2;
 
     Shop odnosnikDoShop;
     

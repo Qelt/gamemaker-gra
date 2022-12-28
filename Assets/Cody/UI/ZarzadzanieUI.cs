@@ -32,15 +32,6 @@ public class ZarzadzanieUI : MonoBehaviour
         punktSoundEffect.Play();
         
     }
-    /*
-    public class MyClass
-    {
-    public int points;
-    public string playerNamel;
-    }
-
-    MyClass myObject = new MyClass();
-    myObject.points = punkty;
-    */
+    
 }
 
