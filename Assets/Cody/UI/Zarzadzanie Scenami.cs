@@ -9,4 +9,14 @@ public class ZarzadzanieScenami : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void goToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void goToShop()
+    {
+        SceneManager.LoadScene(2);
+    }
 }

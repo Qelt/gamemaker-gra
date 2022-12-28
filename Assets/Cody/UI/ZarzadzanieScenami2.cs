@@ -14,4 +14,9 @@ public class ZarzadzanieScenami2 : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    
+    public void goToShop()
+    {
+        SceneManager.LoadScene(2);
+    }
 }

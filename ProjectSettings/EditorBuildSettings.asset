@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/runner.unity
     guid: 7bb48f68ff91e67488b728908900b3ff
+  - enabled: 1
+    path: Assets/Scenes/shop.unity
+    guid: 89e124def0b75c644bfb87c96201611f
   m_configObjects: {}

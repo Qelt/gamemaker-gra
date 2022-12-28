@@ -14,11 +14,18 @@ public class coinPoints : MonoBehaviour
     public float CoinPointsLive;
 
     public float totalCoinPoints;
+
+    public int item1Price;
+    public int item2Price;
+    public int item3Price;
+
+    Shop odnosnikDoShop;
     
     void Awake()
     {
         LoadFromJson();
         menuCoinAmount.text = coinsave.howManyCoins.ToString();
+        odnosnikDoShop = FindObjectOfType<Shop>();
     }
 
     public void addCoinPoint()
@@ -52,6 +59,37 @@ public class coinPoints : MonoBehaviour
         coinsave = JsonUtility.FromJson<coinSave>(coinData);
         Debug.Log("Sukces Load Coin Data");
     }
+
+    public void buyItem1()
+    {
+        if (coinsave.howManyCoins > item1Price)
+        {
+            coinsave.howManyCoins -= item1Price;
+            odnosnikDoShop.item1();
+            menuCoinAmount.text = coinsave.howManyCoins.ToString();
+        }
+    }
+
+    public void buyItem2()
+    {
+        if (coinsave.howManyCoins > item2Price)
+        {
+            coinsave.howManyCoins -= item2Price;
+            odnosnikDoShop.item2();
+            menuCoinAmount.text = coinsave.howManyCoins.ToString();
+        }
+    }
+
+    public void buyItem3()
+    {
+        if (coinsave.howManyCoins > item3Price)
+        {
+            coinsave.howManyCoins -= item3Price;
+            odnosnikDoShop.item3();
+            menuCoinAmount.text = coinsave.howManyCoins.ToString();
+        }
+    }
+
 }
 
 [System.Serializable]
