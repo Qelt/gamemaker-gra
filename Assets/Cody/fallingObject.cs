@@ -5,6 +5,7 @@ using UnityEngine.ParticleSystemJobs;
 
 public class fallingObject : MonoBehaviour
 {
+    public cameraShake cameraShaker;
     public bool move = false;
     private float fallingObjectSpeed = -7f;
 
@@ -34,7 +35,9 @@ public class fallingObject : MonoBehaviour
             fallingObjectSpeed = 0f;
             particleBoom();
             boomaudioefect.Play();
+            StartCoroutine(cameraShaker.Shake(.15f, .4f));
             Debug.Log("boom");
+            Debug.Log("shake");
         }
         
        
@@ -78,6 +81,7 @@ public class fallingObject : MonoBehaviour
             particleBoom();
             Debug.Log("Sound");
             boomaudioefect.Play();
+            StartCoroutine(cameraShaker.Shake(.15f, .4f));
         }
     }
 }

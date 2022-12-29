@@ -9,6 +9,7 @@ public class fallingObjectCollision : MonoBehaviour
     //[SerializeField] LayerMask playerLayer;
     //[SerializeField] float checkRadius = 0.1f;
 
+    public cameraShake cameraShaker;
     poruszanie3 odnosnikDoPoruszaniaGracza;
     [SerializeField] ParticleSystem boom;
     [SerializeField] private AudioSource boomaudioefect;
@@ -27,7 +28,14 @@ public class fallingObjectCollision : MonoBehaviour
             odnosnikDoPoruszaniaGracza.playerDeath();
             particleBoom();
             boomaudioefect.Play();
+            StartCoroutine(cameraShaker.Shake(.15f, .4f));
+            Debug.Log("shake");
+        }
 
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            StartCoroutine(cameraShaker.Shake(.15f, .4f));
+            Debug.Log("shake");
         }
     }
  
