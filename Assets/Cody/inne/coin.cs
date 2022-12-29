@@ -6,6 +6,8 @@ public class coin : MonoBehaviour
 {
     private int oneRepeat = 1;
     coinPoints odnosnikDoCoinPoints;
+    [SerializeField] ParticleSystem particleMonetka;
+    [SerializeField] AudioSource dzwienkMonetka;
     
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,9 @@ public class coin : MonoBehaviour
         if (oneRepeat == 1)
         {
         odnosnikDoCoinPoints.addCoinPoint();
+        particleMonetka.Play();
+        dzwienkMonetka.Play();
+        var main = particleMonetka.main;
         Destroy(this.gameObject);
         oneRepeat -= 1;
         Debug.Log("coin trigger");

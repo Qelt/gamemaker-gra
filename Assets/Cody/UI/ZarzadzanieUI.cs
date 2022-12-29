@@ -64,5 +64,4 @@ public class pointsSave
     public string name;
     public int points;
     
-
 }

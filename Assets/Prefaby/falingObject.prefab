@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 0
+  time: 1
   boom: {fileID: 3616464131427326036}
   boomaudioefect: {fileID: 3387048733314352119}
 --- !u!114 &6069288122636404018
@@ -438,6 +439,10 @@ PrefabInstance:
     - target: {fileID: 1707448616896196860, guid: ddde53efd2aac444fae9bae0110792e2, type: 3}
       propertyPath: m_Name
       value: bum bum
+      objectReference: {fileID: 0}
+    - target: {fileID: 1707448616896196861, guid: ddde53efd2aac444fae9bae0110792e2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1707448616896196862, guid: ddde53efd2aac444fae9bae0110792e2, type: 3}
       propertyPath: playOnAwake
