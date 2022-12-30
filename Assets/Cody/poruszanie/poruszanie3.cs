@@ -228,6 +228,7 @@ public class poruszanie3 : MonoBehaviour
             deathParticle.Play();
             odnosnikdoCoinPoints.activateSaveToJson();
             odnosnikDoZarzadzaniaUI.pointsSaveToJson();
+            odnosnikDoZarzadzaniaUI.printBestScores();
 
         }
 
