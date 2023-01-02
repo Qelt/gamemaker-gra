@@ -21,6 +21,7 @@ public class ZarzadzanieUI : MonoBehaviour
     void Start()
     {
         pointsLoadFromJson();
+        //pointssave.playerName = Test123;
     }
 
     // Update is called once per frame
@@ -36,8 +37,8 @@ public class ZarzadzanieUI : MonoBehaviour
         punktyEkranKonca.text = punkty.ToString();
         punktSoundEffect.Play();
         //pointssave.points++;
-        highscoreElement.points++;
-        
+        //highscoreElement.points++;
+        pointssave.points ++;
     }
 
     public void pointsSaveToJson()
@@ -75,6 +76,14 @@ public class pointsSave
     
     public List<HighscoreElement> highscoreList = new List<HighscoreElement>();
     
+    public string playerName;
+    public int points;
+    /*public HighscoreElement (string name, int points)
+    {
+        playerName = name;
+        this.points = points;
+    }*/
+
     /*
     public List<string> logFromGame = new List<string>();
     public List<int> intlogFromGame = new List<int>();
