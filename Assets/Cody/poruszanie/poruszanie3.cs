@@ -43,6 +43,8 @@ public class poruszanie3 : MonoBehaviour
 
     public bool isPlayerDeath = false;
 
+    private bool fristGroundContakt = false;
+
 
     //audio
     [SerializeField] private AudioSource jumpSoundEffect;
@@ -135,6 +137,7 @@ public class poruszanie3 : MonoBehaviour
             isGrounded = true;
             HowManyJumps = 2;
             //jumpLandingSoundEffect.Play();
+            fristGroundContakt = true;
 
         }
     }
@@ -172,7 +175,11 @@ public class poruszanie3 : MonoBehaviour
     void Move()
     {
         //Debug.Log("ruch");
-        transform.position += new Vector3(PrednkoscPoruszania, 0f ,0f) * Time.deltaTime;
+        if (fristGroundContakt == true)
+        {
+            transform.position += new Vector3(PrednkoscPoruszania, 0f ,0f) * Time.deltaTime;
+        }
+        
         //rb.MovePosition(rb.position +  Vector2.right * PrednkoscPoruszania);
     }
 
@@ -240,7 +247,7 @@ public class poruszanie3 : MonoBehaviour
 
     void particleGround()
     {
-        Debug.Log("ground");
+        //Debug.Log("ground");
         var main = Ground.main;
         main.startColor = Color.red;
         Ground.Play();

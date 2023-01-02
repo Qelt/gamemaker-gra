@@ -3225,7 +3225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8968386077714220670, guid: 38e140005f64bbf439a73fc3833eefcc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.33
+      value: 5.33
       objectReference: {fileID: 0}
     - target: {fileID: 8968386077714220670, guid: 38e140005f64bbf439a73fc3833eefcc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3976,6 +3976,7 @@ GameObject:
   - component: {fileID: 1715067468}
   - component: {fileID: 1715067467}
   - component: {fileID: 1715067469}
+  - component: {fileID: 1715067470}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4006,7 +4007,7 @@ MonoBehaviour:
   Platforma8: {fileID: 6830454227108762167, guid: 55af35504d5b3ce44888de56ac47696a, type: 3}
   Platforma9: {fileID: 8003804680199834700, guid: a72d323574473634985090edfc8e5ebc, type: 3}
   Platforma10: {fileID: 8003804680199834700, guid: a393f074b6187054f9fe858fdbd34e56, type: 3}
-  odstep: 20
+  odstep: 15
 --- !u!4 &1715067468
 Transform:
   m_ObjectHideFlags: 0
@@ -4041,6 +4042,22 @@ MonoBehaviour:
   Player1: {fileID: 8512517267030711895, guid: b111a4fce078c164eaec1b869423e286, type: 3}
   Player2: {fileID: 0}
   Player3: {fileID: 0}
+--- !u!114 &1715067470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715067466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4ba757fbc01ba46bb0fab082a2af7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects: []
+  myobjecttest:
+    value: 0
+    name: 
 --- !u!1001 &1832976246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4211,13 +4228,15 @@ MonoBehaviour:
   punktyEkranKonca: {fileID: 905873103}
   punkty: 0
   pointssave:
-    logFromGame: []
-    intlogFromGame: 
-    name: 
+    highscoreList: []
+    playerName: 
     points: 0
   scoreBordpoints: 
   punktSoundEffect: {fileID: 1868932067}
   ScorebordText: {fileID: 0}
+  highscoreElement:
+    playerName: 
+    points: 0
 --- !u!4 &1868932065
 Transform:
   m_ObjectHideFlags: 0

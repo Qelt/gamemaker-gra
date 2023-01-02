@@ -15,6 +15,10 @@ public class ZarzadzanieUI : MonoBehaviour
     [SerializeField] private AudioSource punktSoundEffect;
     [SerializeField] TextMeshProUGUI ScorebordText;
     [SerializeField] HighscoreElement highscoreElement;
+
+    JSONExample jsonexample;
+    public valueSave valuesave = new valueSave();
+
     
     
     // Start is called before the first frame update
@@ -22,6 +26,8 @@ public class ZarzadzanieUI : MonoBehaviour
     {
         pointsLoadFromJson();
         //pointssave.playerName = Test123;
+
+        jsonexample = FindObjectOfType<JSONExample>();
     }
 
     // Update is called once per frame
@@ -39,6 +45,8 @@ public class ZarzadzanieUI : MonoBehaviour
         //pointssave.points++;
         //highscoreElement.points++;
         pointssave.points ++;
+        jsonexample.addPointJSONExample();
+        valuesave.pointsValue ++;
     }
 
     public void pointsSaveToJson()
@@ -46,7 +54,7 @@ public class ZarzadzanieUI : MonoBehaviour
     //pointssave.logFromGame.Add(pointssave.name);
     //pointssave.intlogFromGame.Add(punkty);
     //pointssave.highscoreList.Add(highscoreElement.points);
-
+    jsonexample.jsonExampleSaveData();
     string pointsData = JsonUtility.ToJson(pointssave);
     string filePath = Application.persistentDataPath + "/PointsSave.json";
     Debug.Log(filePath);
@@ -75,6 +83,7 @@ public class pointsSave
 {
     
     public List<HighscoreElement> highscoreList = new List<HighscoreElement>();
+    public List<valueSave> valuesave = new List<valueSave>();
     
     public string playerName;
     public int points;
@@ -96,13 +105,20 @@ public class pointsSave
 [Serializable]
 public class HighscoreElement
 {
-    public string playerName;
-    public int points;
-
+    //public string playerName;
+    //public int points;
+    /*
     public HighscoreElement (string name, int points)
     {
         playerName = name;
         this.points = points;
-    }
+    }*/
+    
+}
 
+[System.Serializable]
+public class valueSave
+{
+    public int pointsValue;
+    public string playerName;
 }
