@@ -6,6 +6,9 @@ public class GenerowaniePlatform : MonoBehaviour
 {
     public static GenerowaniePlatform Instance;
 
+    [SerializeField]
+    private Platforma2[] platformPrefabs;
+
     public GameObject Platforma;
     public GameObject Platforma1;
     public GameObject Platforma2;
@@ -37,7 +40,7 @@ public class GenerowaniePlatform : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
-            UtworzPlatforme();
+            UtworzPlatforme(20);
         }
     }
 
@@ -47,11 +50,16 @@ public class GenerowaniePlatform : MonoBehaviour
         //odstep += przyspieszenie;
     }
     
-    public void UtworzPlatforme()
+    public void UtworzPlatforme(float lastPlatformLength)
     {
         przyspieszenie += 0.0025f ;
         
-        losowaniePlatfomy = Random.Range( 1, 11);
+        losowaniePlatfomy = Random.Range( 0, platformPrefabs.Length);
+
+        Instantiate(platformPrefabs[losowaniePlatfomy].gameObject, new Vector3(odstep + 1, Random.Range(-6f, -4f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += platformPrefabs[losowaniePlatfomy].distance + przyspieszenie;
+    
+        return;
         
         if ( losowaniePlatfomy == 1)
         {
@@ -89,7 +97,7 @@ public class GenerowaniePlatform : MonoBehaviour
     public void UtworzPlatforme1()
     {
         Instantiate(Platforma1, new Vector3(odstep + 1, Random.Range(-6f, -4f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 8 + przyspieszenie;
+        odstep += 9 + przyspieszenie;
     }
 
     public void UtworzPlatforme2()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Platforma2 : MonoBehaviour
 {
+    public float distance = 10;
     [SerializeField]
     private float lifetime= 60f;
     ZarzadzanieUI odnosnikDoZarzadzaniaUI;
@@ -22,7 +23,7 @@ public class Platforma2 : MonoBehaviour
         if (oneRepeat == 1)
         {
         Debug.Log("trigger");
-        GenerowaniePlatform.Instance.UtworzPlatforme();
+        GenerowaniePlatform.Instance.UtworzPlatforme(distance);
         odnosnikDoZarzadzaniaUI.DodajPunkt();
         oneRepeat -= 1;
         }

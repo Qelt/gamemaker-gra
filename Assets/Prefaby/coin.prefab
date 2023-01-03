@@ -239,6 +239,10 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 319942558135263027, guid: f142f5189934ded4eaf2d01bfcdfce2b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 319942558135263029, guid: f142f5189934ded4eaf2d01bfcdfce2b, type: 3}
       propertyPath: m_RootOrder
       value: 0
