@@ -3,44 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.ParticleSystemJobs;
 
-public class fallingObject : MonoBehaviour
+public class FallingObject : MonoBehaviour
 {
-    public cameraShake cameraShaker;
+    public CameraShake cameraShaker;
+
     public bool move = false;
+
     private float fallingObjectSpeed = -7f;
 
     public float time = 1;
 
     private int howManyRepeat = 3;
+
     [SerializeField] ParticleSystem boom;
     [SerializeField] private AudioSource boomaudioefect;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (move == true)
+        if (move)
         {
             transform.position += new Vector3(0f, fallingObjectSpeed ,0f) * Time.deltaTime;
         }
 
-        
         if (transform.position.y < -5f)
         {
             fallingObjectSpeed = 0f;
             particleBoom();
             boomaudioefect.Play();
-            StartCoroutine(cameraShaker.Shake(.15f, .4f));
+            CameraShake shaker = Camera.main.GetComponent<CameraShake>();
+            StartCoroutine(shaker.Shake(.15f, .4f));
             Debug.Log("boom");
             Debug.Log("shake");
         }
         
-       
     }
 
 

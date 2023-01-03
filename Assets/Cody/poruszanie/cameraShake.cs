@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cameraShake : MonoBehaviour
+public class CameraShake : MonoBehaviour
 {
     // Start is called before the first frame update
     public IEnumerator Shake (float duration, float magnitude)

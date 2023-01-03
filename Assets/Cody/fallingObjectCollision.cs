@@ -9,7 +9,7 @@ public class fallingObjectCollision : MonoBehaviour
     //[SerializeField] LayerMask playerLayer;
     //[SerializeField] float checkRadius = 0.1f;
 
-    public cameraShake cameraShaker;
+    public CameraShake cameraShaker;
     poruszanie3 odnosnikDoPoruszaniaGracza;
     [SerializeField] ParticleSystem boom;
     [SerializeField] private AudioSource boomaudioefect;

@@ -65,6 +65,8 @@ public class poruszanie3 : MonoBehaviour
         OnedeathSound = 1;
         odnosnikdoCoinPoints = FindObjectOfType<coinPoints>();
         odnosnikDoZarzadzaniaUI = FindObjectOfType<ZarzadzanieUI>();
+
+        FindObjectOfType<PoruszanieKamery>().player = this.transform;
     }
 
     private void FixedUpdate() 

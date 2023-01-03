@@ -5,7 +5,7 @@ using UnityEngine;
 public class fallingobjectCollider : MonoBehaviour
 {
     [SerializeField]
-    fallingObject odnosnikdofallingobject;
+    FallingObject odnosnikdofallingobject;
     void OnTriggerEnter2D(Collider2D other)
     {
         odnosnikdofallingobject.startAction();
