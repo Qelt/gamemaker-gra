@@ -10,6 +10,7 @@ public class fallingObjectCollision : MonoBehaviour
     //[SerializeField] float checkRadius = 0.1f;
 
     public CameraShake cameraShaker;
+    int one = 1;
     poruszanie3 odnosnikDoPoruszaniaGracza;
     [SerializeField] ParticleSystem boom;
     [SerializeField] private AudioSource boomaudioefect;
@@ -28,15 +29,17 @@ public class fallingObjectCollision : MonoBehaviour
             odnosnikDoPoruszaniaGracza.playerDeath();
             particleBoom();
             boomaudioefect.Play();
-            StartCoroutine(cameraShaker.Shake(.15f, .4f));
-            Debug.Log("shake");
+            
+            
+            if (one == 1)
+            {
+                CameraShake cameraShaker = Camera.main.GetComponent<CameraShake>();
+                StartCoroutine(cameraShaker.Shake(.10f, .2f));
+                one -=1;
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            StartCoroutine(cameraShaker.Shake(.15f, .4f));
-            Debug.Log("shake");
-        }
+        
     }
  
     void OnCollisionEnter2D(Collision2D other)

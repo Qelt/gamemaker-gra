@@ -23,7 +23,8 @@ public class Platforma2 : MonoBehaviour
         if (oneRepeat == 1)
         {
         Debug.Log("trigger");
-        GenerowaniePlatform.Instance.UtworzPlatforme(distance);
+        //GenerowaniePlatform.Instance.UtworzPlatforme(distance);
+        GenerowaniePlatformStaraWersja.Instance.UtworzPlatforme();
         odnosnikDoZarzadzaniaUI.DodajPunkt();
         oneRepeat -= 1;
         }

@@ -251,7 +251,8 @@ public class poruszanie3 : MonoBehaviour
     {
         //Debug.Log("ground");
         var main = Ground.main;
-        main.startColor = Color.red;
+        main.startColor = new Color(159,158,159,1);
+        //Color.red;
         Ground.Play();
     }
 
