@@ -4131,7 +4131,7 @@ MonoBehaviour:
   Platforma8: {fileID: 6830454227108762167, guid: 55af35504d5b3ce44888de56ac47696a, type: 3}
   Platforma9: {fileID: 8003804680199834700, guid: a72d323574473634985090edfc8e5ebc, type: 3}
   Platforma10: {fileID: 8003804680199834700, guid: a393f074b6187054f9fe858fdbd34e56, type: 3}
-  odstep: 15
+  odstep: 13
 --- !u!4 &1715067468
 Transform:
   m_ObjectHideFlags: 0
@@ -4195,17 +4195,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Platformax: {fileID: 8003804680199834700, guid: 38e140005f64bbf439a73fc3833eefcc, type: 3}
-  Platforma1x: {fileID: 8003804680199834700, guid: 38e140005f64bbf439a73fc3833eefcc, type: 3}
-  Platforma2x: {fileID: 1067605343497912742, guid: b84c60251995f494aa2305805b4336d6, type: 3}
-  Platforma3x: {fileID: 8421514894577926367, guid: 553f0fb120ed78f418b062922d0e1143, type: 3}
-  Platforma4x: {fileID: 1311107566827917401, guid: 8394bfe20956bd44d96fab172f271555, type: 3}
-  Platforma5x: {fileID: 6830454227108762167, guid: c1d0c0f193dfa5e44a03e9797f3b213e, type: 3}
-  Platforma6x: {fileID: 8116480418767456059, guid: 4cfadcd42ebc2854598afe592faf73c1, type: 3}
-  Platforma7x: {fileID: 6830454227108762167, guid: 488b7b1b5b816e844b90043c3c228ee6, type: 3}
-  Platforma8x: {fileID: 6830454227108762167, guid: 55af35504d5b3ce44888de56ac47696a, type: 3}
-  Platforma9x: {fileID: 8003804680199834700, guid: a72d323574473634985090edfc8e5ebc, type: 3}
+  Platforma1x: {fileID: 8003804680199834700, guid: 023af858337192e42b3bb2f7667457fa, type: 3}
+  Platforma2x: {fileID: 8003804680199834700, guid: fe659116020ffe248ad54a74ee66edae, type: 3}
+  Platforma3x: {fileID: 8003804680199834700, guid: 720bea4390d640f418c9ed5a423280a5, type: 3}
+  Platforma4x: {fileID: 8003804680199834700, guid: d8889b0f4b8aa3b44893fcf10b247217, type: 3}
+  Platforma5x: {fileID: 6830454227108762167, guid: 2ea8c1957d7a4dd40942a429ab322e20, type: 3}
+  Platforma6x: {fileID: 8003804680199834700, guid: 0c3dba92a50031545b968ae26f05a30d, type: 3}
+  Platforma7x: {fileID: 6830454227108762167, guid: 06f17198790c86f4f9bcf75a1cddfeee, type: 3}
+  Platforma8x: {fileID: 6830454227108762167, guid: ea9cadba0e0b8a643b5cee52e684be2b, type: 3}
+  Platforma9x: {fileID: 8003804680199834700, guid: 45c1237ca16e44346906a15c8b3e3059, type: 3}
   Platforma10x: {fileID: 8003804680199834700, guid: a393f074b6187054f9fe858fdbd34e56, type: 3}
-  odstep: 13
+  odstep: 10
 --- !u!1001 &1832976246
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -51,7 +51,7 @@ public class GenerowaniePlatformStaraWersja : MonoBehaviour
     {
         przyspieszenie += 0.0025f ;
         
-        losowaniePlatfomy = Random.Range( 1, 11);
+        losowaniePlatfomy = Random.Range( 1, 10);
         
         if ( losowaniePlatfomy == 1)
         {
@@ -88,56 +88,56 @@ public class GenerowaniePlatformStaraWersja : MonoBehaviour
 
     public void UtworzPlatforme1()
     {
-        Instantiate(Platforma1x, new Vector3(odstep + 1, Random.Range(-6f, -4f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 8 + przyspieszenie;
+        Instantiate(Platforma1x, new Vector3(odstep + 1  , Random.Range(-6f, -4f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 11 + przyspieszenie;
     }
 
     public void UtworzPlatforme2()
     {
-        Instantiate(Platforma2x, new Vector3(odstep - 4, Random.Range(-2f, 0f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 10 + przyspieszenie;
+        Instantiate(Platforma2x, new Vector3(odstep + 2, Random.Range(-4f, -2f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 11 + przyspieszenie;
     }
 
     public void UtworzPlatforme3()
     {
-        Instantiate(Platforma3x, new Vector3(odstep + 6, Random.Range(-6f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 9 + przyspieszenie;
+        Instantiate(Platforma3x, new Vector3(odstep + 2, Random.Range(-4f, -2f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 11 + przyspieszenie;
     }
 
     public void UtworzPlatforme4()
     {
-        Instantiate(Platforma4x, new Vector3(odstep - 2, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 10 + przyspieszenie;
+        Instantiate(Platforma4x, new Vector3(odstep + 1, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 11 + przyspieszenie;
     }
 
     public void UtworzPlatforme5()
     {
-        Instantiate(Platforma5x, new Vector3(odstep - 9, Random.Range( -2f, 1f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 21 + przyspieszenie;
+        Instantiate(Platforma5x, new Vector3(odstep - 8, Random.Range( -2f, 1f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 20 + przyspieszenie;
     }
 
     public void UtworzPlatforme6()
     {
-        Instantiate(Platforma6x, new Vector3(odstep - 3, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 9 + przyspieszenie;
+        Instantiate(Platforma6x, new Vector3(odstep + 1, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 11 + przyspieszenie;
     }
 
     public void UtworzPlatforme7()
     {
-        Instantiate(Platforma7x, new Vector3(odstep - 9, Random.Range( -2f, 1f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 21 + przyspieszenie;
+        Instantiate(Platforma7x, new Vector3(odstep - 7, Random.Range( -2f, 1f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 22 + przyspieszenie;
     }
 
     public void UtworzPlatforme8()
     {
-        Instantiate(Platforma8x, new Vector3(odstep - 9, Random.Range( -2f, 1f), 0), Quaternion.Euler(0, 0, 0)) ;
+        Instantiate(Platforma8x, new Vector3(odstep - 7, Random.Range( -2f, 1f), 0), Quaternion.Euler(0, 0, 0)) ;
         odstep += 21 + przyspieszenie;
     }
 
     public void UtworzPlatforme9()
     {
-        Instantiate(Platforma9x, new Vector3(odstep - 1, Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
-        odstep += 12 + przyspieszenie;
+        Instantiate(Platforma9x, new Vector3(odstep + 1 , Random.Range(-5f, -3f), 0), Quaternion.Euler(0, 0, 0)) ;
+        odstep += 11 + przyspieszenie;
     }
 
     public void UtworzPlatforme10()
