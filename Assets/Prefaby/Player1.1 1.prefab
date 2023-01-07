@@ -269,6 +269,7 @@ MonoBehaviour:
   jumpLandingSoundEffect: {fileID: 1414150483988659690}
   deathSoundEffect: {fileID: 4842666920301351776}
   Ground: {fileID: 165063438119560154}
+  deathParticle: {fileID: 0}
 --- !u!82 &3735935030478238152
 AudioSource:
   m_ObjectHideFlags: 0
@@ -648,7 +649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7456792988994122954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.31, y: 2.85, z: 0}
+  m_LocalPosition: {x: 2.31, y: -1.2, z: 0}
   m_LocalScale: {x: 9.090909, y: 9.090909, z: 9.090909}
   m_ConstrainProportionsScale: 0
   m_Children: []

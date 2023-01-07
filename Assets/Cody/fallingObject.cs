@@ -83,6 +83,7 @@ public class FallingObject : MonoBehaviour
         
         if (other.gameObject.CompareTag("Budynek"))
         {
+            move = false;
             fallingObjectSpeed = 0f;
             particleBoom();
             Debug.Log("Sound");
