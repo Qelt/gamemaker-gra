@@ -6,9 +6,10 @@ public class ekranKoncowy : MonoBehaviour
 {
     public GameObject panelKoncaGry;
     public GameObject Pause;
-    public GameObject scoreBoard;
+    //public GameObject scoreBoard;
     
     poruszanie3 odnosnikDoPoruszaniaGracza; 
+    ZarzadzanieUI odnosinkDoZarzadzniaUI;
     
 
     public void koniecPausy()
@@ -22,6 +23,7 @@ public class ekranKoncowy : MonoBehaviour
     void Start()
     {
         odnosnikDoPoruszaniaGracza = FindObjectOfType<poruszanie3>();
+        odnosinkDoZarzadzniaUI = FindObjectOfType<ZarzadzanieUI>();
         Pause.SetActive(false);
         Time.timeScale = 1f;
     }
@@ -32,11 +34,13 @@ public class ekranKoncowy : MonoBehaviour
         if (odnosnikDoPoruszaniaGracza.isPlayerDeath == true)
         {
             panelKoncaGry.SetActive(true);
-            scoreBoard.SetActive(true);
+            odnosinkDoZarzadzniaUI.printBestScores();
+
+            //scoreBoard.SetActive(true);
         }else
         {
             panelKoncaGry.SetActive(false);
-            scoreBoard.SetActive(false);
+            //scoreBoard.SetActive(false);
         }
 
         if (Input.GetKey(KeyCode.Escape))

@@ -15,16 +15,19 @@ void Awake()
     setLoadFromJson();
     
     Scene scene = SceneManager.GetActiveScene();
-    if (scene.name == "runner" && setsave.setItem1 == true)
+    if (scene.name == "runnerv2" && setsave.setItem1 == true)
     {
         Instantiate(Player1);
-        Debug.Log("Plater1");
-    }else if (scene.name == "runner" && setsave.setItem2 == true)
+        Debug.Log("Player1");
+    }else if (scene.name == "runnerv2" && setsave.setItem2 == true)
     {
         Instantiate(Player2);
-    }else if (scene.name == "runner" && setsave.setItem3 == true)
+    }else if (scene.name == "runnerv2" && setsave.setItem3 == true)
     {
         Instantiate(Player3);
+    }else if (scene.name =="runnerv2")
+    {
+        Instantiate(Player1);
     }
 }
 public void setSaveToJson()

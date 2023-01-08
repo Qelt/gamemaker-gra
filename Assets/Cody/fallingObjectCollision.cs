@@ -44,7 +44,13 @@ public class fallingObjectCollision : MonoBehaviour
  
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.name == "Player1.1")
+        if (other.gameObject.name == "Player1.1 1")
+        {
+            collisionWithPlayer = true;
+        }else if (other.gameObject.name == "Player2")
+        {
+            collisionWithPlayer = true;
+        }else if (other.gameObject.name == "Player3")
         {
             collisionWithPlayer = true;
         }

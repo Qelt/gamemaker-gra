@@ -8,16 +8,21 @@ public class ZarzadzanieUI : MonoBehaviour
 {
     public TextMeshProUGUI punktyWGrzeTekst;
     public TextMeshProUGUI punktyEkranKonca;
+    public TextMeshProUGUI highestScoreText;
     public int punkty;
     public pointsSave pointssave = new pointsSave();
-    public string scoreBordpoints;
+
+    private int i;
+
+    string higestScorePrint;
+    //public string scoreBordpoints;
 
     [SerializeField] private AudioSource punktSoundEffect;
-    [SerializeField] TextMeshProUGUI ScorebordText;
-    [SerializeField] HighscoreElement highscoreElement;
+    //[SerializeField] TextMeshProUGUI ScorebordText;
+    //[SerializeField] HighscoreElement highscoreElement;
 
-    JSONExample jsonexample;
-    public valueSave valuesave = new valueSave();
+    //JSONExample jsonexample;
+    //public valueSave valuesave = new valueSave();
 
     
     
@@ -26,8 +31,7 @@ public class ZarzadzanieUI : MonoBehaviour
     {
         pointsLoadFromJson();
         //pointssave.playerName = Test123;
-
-        jsonexample = FindObjectOfType<JSONExample>();
+        //jsonexample = FindObjectOfType<JSONExample>();
     }
 
     // Update is called once per frame
@@ -44,9 +48,9 @@ public class ZarzadzanieUI : MonoBehaviour
         punktSoundEffect.Play();
         //pointssave.points++;
         //highscoreElement.points++;
-        pointssave.points ++;
-        jsonexample.addPointJSONExample();
-        valuesave.pointsValue ++;
+        //pointssave.points ++;
+        //jsonexample.addPointJSONExample();
+        //valuesave.pointsValue ++;
     }
 
     public void pointsSaveToJson()
@@ -54,7 +58,7 @@ public class ZarzadzanieUI : MonoBehaviour
     //pointssave.logFromGame.Add(pointssave.name);
     //pointssave.intlogFromGame.Add(punkty);
     //pointssave.highscoreList.Add(highscoreElement.points);
-    jsonexample.jsonExampleSaveData();
+    //jsonexample.jsonExampleSaveData();
     string pointsData = JsonUtility.ToJson(pointssave);
     string filePath = Application.persistentDataPath + "/PointsSave.json";
     Debug.Log(filePath);
@@ -73,6 +77,21 @@ public class ZarzadzanieUI : MonoBehaviour
 
     public void printBestScores()
     {
+        for (i = 0; i < 1; i++)
+        {
+           if (pointssave.highestScore < punkty)
+            {
+                higestScorePrint = punkty + "This is your new record";
+                highestScoreText.text = higestScorePrint.ToString();
+                pointssave.highestScore = punkty;
+            }else if (pointssave.highestScore >= punkty) 
+            {
+                highestScoreText.text = punkty.ToString();
+            } 
+        }
+        
+        
+        pointsSaveToJson();
         //foreach( var x in pointssave.intlogFromGame) Debug.Log( x.ToString(scoreBordpoints));
         //ScorebordText.text = pointssave.intlogFromGame.ToString();
     }
@@ -82,11 +101,8 @@ public class ZarzadzanieUI : MonoBehaviour
 public class pointsSave
 {
     
-    public List<HighscoreElement> highscoreList = new List<HighscoreElement>();
-    public List<valueSave> valuesave = new List<valueSave>();
-    
-    public string playerName;
-    public int points;
+    public int highestScore;
+
     /*public HighscoreElement (string name, int points)
     {
         playerName = name;
@@ -101,24 +117,25 @@ public class pointsSave
     */
 }
 
-
+/*
 [Serializable]
 public class HighscoreElement
 {
     //public string playerName;
     //public int points;
-    /*
+    
     public HighscoreElement (string name, int points)
     {
         playerName = name;
         this.points = points;
-    }*/
+    }
     
-}
+} */
 
+/*
 [System.Serializable]
 public class valueSave
 {
     public int pointsValue;
     public string playerName;
-}
+}*/

@@ -4163,7 +4163,7 @@ MonoBehaviour:
     setItem1: 0
     setItem2: 0
     setItem3: 0
-  Player1: {fileID: 8512517267030711895, guid: b111a4fce078c164eaec1b869423e286, type: 3}
+  Player1: {fileID: 5403862029256017637, guid: 4062d8aab5cacb440bae8749e85ff618, type: 3}
   Player2: {fileID: 0}
   Player3: {fileID: 0}
 --- !u!114 &1715067470

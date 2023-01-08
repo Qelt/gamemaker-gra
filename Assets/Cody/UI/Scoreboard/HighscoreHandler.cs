@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HighscoreHandler : MonoBehaviour
 {
-    List<HighscoreElement> highscoreList = new List<HighscoreElement>();
-    [SerializeField] int maxCount = 7;
+    //List<HighscoreElement> highscoreList = new List<HighscoreElement>();
+    //[SerializeField] int maxCount = 7;
 
     private void Start()
     {
@@ -21,9 +21,9 @@ public class HighscoreHandler : MonoBehaviour
     {
 
     }
-
+    /*
     public void AddHighscoreIfPossible (HighscoreElement element)
     {
         
-    }
+    }*/
 }
