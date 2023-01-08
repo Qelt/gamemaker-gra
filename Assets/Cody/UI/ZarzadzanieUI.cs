@@ -79,15 +79,20 @@ public class ZarzadzanieUI : MonoBehaviour
     {
         for (i = 0; i < 1; i++)
         {
+           pointsLoadFromJson();
            if (pointssave.highestScore < punkty)
             {
-                higestScorePrint = punkty + "This is your new record";
+                higestScorePrint = punkty + " This is your new record";
                 highestScoreText.text = higestScorePrint.ToString();
                 pointssave.highestScore = punkty;
-            }else if (pointssave.highestScore >= punkty) 
+                Debug.Log("High score");
+            }else if (pointssave.highestScore > punkty) 
             {
-                highestScoreText.text = punkty.ToString();
-            } 
+                highestScoreText.text = pointssave.highestScore.ToString();
+            }else if (pointssave.highestScore == punkty)
+            {
+                highestScoreText.text = pointssave.highestScore.ToString();
+            }
         }
         
         
