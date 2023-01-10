@@ -6,7 +6,7 @@ public class PoruszanieKamery : MonoBehaviour
 {
     public Transform player;
     
-    private void Update()
+    private void LateUpdate()
     {
         transform.position = new Vector3(player.position.x + 4, 0f, -10f);
     }

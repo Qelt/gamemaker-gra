@@ -19,26 +19,27 @@ public class FallingObject : MonoBehaviour
     [SerializeField] ParticleSystem boom;
     [SerializeField] private AudioSource boomaudioefect;
 
+    public Rigidbody2D rb;
+
+    
+
     // Start is called before the first frame update
     private void Start()
     {
+        rb.isKinematic = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (move)
-        {
-            transform.position += new Vector3(0f, fallingObjectSpeed ,0f) * Time.deltaTime;
-        }
 
         if (transform.position.y < -5f)
         {
             fallingObjectSpeed = 0f;
-            particleBoom();
-            boomaudioefect.Play();
             if (one >= 1)
             {
+                particleBoom();
+                boomaudioefect.Play();
                 CameraShake cameraShaker = Camera.main.GetComponent<CameraShake>();
                 StartCoroutine(cameraShaker.Shake(.10f, .2f));
                 one -=1;
@@ -47,6 +48,11 @@ public class FallingObject : MonoBehaviour
             Debug.Log("Boom");
         }
         
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            boomaudioefect.Play();
+        }
     }
 
 
@@ -63,6 +69,8 @@ public class FallingObject : MonoBehaviour
     public void startAction()
     {                       
         move = true;
+        rb.isKinematic = false;
+
     }
 
     void particleBoom()

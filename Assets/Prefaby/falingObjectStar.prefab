@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 6069288122636404018}
   - component: {fileID: 5209057643516208099}
   - component: {fileID: 3387048733314352119}
+  - component: {fileID: 6066777096785320168}
   m_Layer: 2
   m_Name: object
   m_TagString: Untagged
@@ -212,6 +213,7 @@ MonoBehaviour:
   time: 1
   boom: {fileID: 3616464131427326036}
   boomaudioefect: {fileID: 3387048733314352119}
+  rb: {fileID: 6066777096785320168}
 --- !u!114 &6069288122636404018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +351,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!50 &6066777096785320168
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5415713548143874002}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &446377925148109762
 PrefabInstance:
   m_ObjectHideFlags: 0
